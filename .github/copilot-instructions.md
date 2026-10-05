@@ -1,0 +1,11 @@
+# Project Instructions
+- Source of truth: read `ARCHITECTURE.md` before structural changes.
+- Stack: Python 3.12 (full type hints, mypy strict), FastAPI, Jinja2 + Tailwind CSS, Supabase (Postgres, Auth, Storage), Pydantic v2.
+- Structure: `routers/` → `services/` → `repositories/` only; only repositories query Supabase; pass Pydantic models, not raw dicts.
+- Supabase: use anon key + user JWT so RLS applies; service_role key only for backend admin tasks, never exposed to templates or frontend.
+- Database: all tables have RLS; schema changes only via `supabase migration new`; never write `using (true)` write policies.
+- UI: templates are presentational only; extend `base.html`; reuse `templates/components/`; Tailwind config tokens, no hardcoded colors.
+- Localization: all user-facing text in Traditional Chinese (zh-TW, Taiwan terms); follow glossary in ARCHITECTURE.md §6.
+- Before PR: run `ruff check .`, `mypy app`, `pytest tests/unit tests/integration`, `pytest tests/e2e`.
+- Commits: Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`); branches `feat/…`, `fix/…`.
+- Safety: never commit `.env*` or Supabase keys; never run destructive DB commands without asking.

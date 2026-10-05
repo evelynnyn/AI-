@@ -1,0 +1,35 @@
+# Environment variables (keep the template)
+.env*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Tools and test caches
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+test-results/
+playwright-report/
+
+# Supabase local
+supabase/.branches/
+supabase/.temp/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
