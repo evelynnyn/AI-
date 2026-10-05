@@ -1,10 +1,10 @@
 - Source of truth: read `ARCHITECTURE.md` before structural changes.
-- Stack: Python 3.12 (full type hints, mypy strict), FastAPI, Jinja2 + Tailwind CSS, Supabase (Postgres, Auth, Storage), Pydantic v2.
-- Structure: `routers/` → `services/` → `repositories/` only; only repositories query Supabase; pass Pydantic models, not raw dicts.
-- Supabase: use anon key + user JWT so RLS applies; service_role key only for backend admin tasks, never exposed to templates or frontend.
-- Database: all tables have RLS; schema changes only via `supabase migration new`; never write `using (true)` write policies.
-- UI: templates are presentational only; extend `base.html`; reuse `templates/components/`; Tailwind config tokens, no hardcoded colors.
-- Localization: all user-facing text in Traditional Chinese (zh-TW, Taiwan terms); follow glossary in ARCHITECTURE.md §6.
-- Before PR: run `ruff check .`, `mypy app`, `pytest tests/unit tests/integration`, `pytest tests/e2e`.
-- Commits: Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`); branches `feat/…`, `fix/…`.
-- Safety: never commit `.env*` or Supabase keys; never run destructive DB commands without asking.
+- Stack: `frontend/` Next.js 15 (App Router), TypeScript strict, Tailwind, shadcn/ui; `backend/` FastAPI, Python 3.12, Pydantic v2, mypy strict; Supabase (Postgres, Auth, Storage).
+- Frontend: Server Components by default, `"use client"` only when needed; use shadcn/ui before custom UI; call the backend only via `src/lib/api/client.ts`; use Supabase for Auth only, never query tables.
+- Backend: JSON API under `/api/v1/`; `routers/` → `services/` → `repositories/` only; only repositories query Supabase; pass Pydantic models, not raw dicts.
+- API types: never edit `src/lib/api/types.ts`; regenerate from OpenAPI with `npm run gen:api` after API changes.
+- Supabase: anon key + user JWT so RLS applies; service_role key backend-only, never in `frontend/` or `NEXT_PUBLIC_*`; all tables have RLS; schema changes via `supabase migration new`; never `using (true)` write policies.
+- Localization: all user-facing text in Traditional Chinese (zh-TW, Taiwan terms) per ARCHITECTURE.md §7; code, comments, commits in English.
+- Before PR: backend `ruff check .`, `mypy app`, `pytest`; frontend `npm run lint`, `npm run typecheck`, `npm test`, `npx playwright test`.
+- Git: Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`); branches `feat/…`, `fix/…`.
+- Safety: never commit `.env*` or keys; never run destructive DB commands without asking.

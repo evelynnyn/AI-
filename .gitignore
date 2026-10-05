@@ -33,3 +33,13 @@ supabase/.temp/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Node / Next.js (frontend)
+node_modules/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+next-env.d.ts
+.vercel/
+npm-debug.log*
