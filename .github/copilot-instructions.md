@@ -1,4 +1,3 @@
-# Project Instructions
 - Source of truth: read `ARCHITECTURE.md` before structural changes.
 - Stack: Python 3.12 (full type hints, mypy strict), FastAPI, Jinja2 + Tailwind CSS, Supabase (Postgres, Auth, Storage), Pydantic v2.
 - Structure: `routers/` → `services/` → `repositories/` only; only repositories query Supabase; pass Pydantic models, not raw dicts.
