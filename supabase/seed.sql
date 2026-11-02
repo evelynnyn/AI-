@@ -1,0 +1,1 @@
+-- Local test data. Readings are created per user through the app, so nothing is seeded yet.
