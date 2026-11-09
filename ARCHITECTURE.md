@@ -135,6 +135,10 @@
 4. **端對端測試 (Playwright)：**
    - `npx playwright test`（於 `frontend/` 執行）
    - 範圍：核心使用者路徑（登入、重要表單、主要業務流程）。
+5. **自動執行 (GitHub Actions，`.github/workflows/ci.yml`)：**
+   - 每個 Pull Request 與推送到 `main` 時自動執行以上 1～4 項。
+   - RLS 整合測試與 E2E 在 CI 中使用 `supabase start` 建立的暫時性本機 Supabase，不連線正式環境、不需要任何 Secrets，結束後環境即銷毀，不留下測試資料。
+   - 新功能必須同時新增測試：商業邏輯寫單元測試，新的使用者路徑寫 Playwright 測試。
 
 ---
 
