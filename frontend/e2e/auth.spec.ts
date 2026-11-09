@@ -10,13 +10,14 @@ test("reading history requires login", async ({ page }) => {
 });
 
 // Full flow: needs `supabase start` and the backend running (see README).
-test("sign up, save a reading, then sign out", async ({ page }) => {
+test("sign up, save a reading, then sign out", async ({ page }, testInfo) => {
   test.skip(
     !process.env.E2E_SUPABASE,
     "set E2E_SUPABASE=1 with local Supabase + backend running",
   );
 
-  const email = `e2e-${Date.now()}@example.com`;
+  // Projects run in parallel, so include the project name to keep emails unique.
+  const email = `e2e-${testInfo.project.name}-${Date.now()}@example.com`;
   await page.goto("/login");
   await page.getByRole("button", { name: "建立帳號" }).click();
   await page.getByLabel("電子郵件").fill(email);

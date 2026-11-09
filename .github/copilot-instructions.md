@@ -5,6 +5,6 @@
 - API types: never edit `src/lib/api/types.ts`; regenerate from OpenAPI with `npm run gen:api` after API changes.
 - Supabase: anon key + user JWT so RLS applies; service_role key backend-only, never in `frontend/` or `NEXT_PUBLIC_*`; all tables have RLS; schema changes via `supabase migration new`; never `using (true)` write policies.
 - Localization: all user-facing text in Traditional Chinese (zh-TW, Taiwan terms) per ARCHITECTURE.md §7; code, comments, commits in English.
-- Before PR: backend `ruff check .`, `mypy app`, `pytest`; frontend `npm run lint`, `npm run typecheck`, `npm test`, `npx playwright test`.
+- Testing: add unit tests (pytest / Vitest) for new logic and Playwright specs in `frontend/e2e/` for new user flows. Before PR run backend `ruff check .`, `mypy app`, `pytest`; frontend `npm run lint`, `npm run typecheck`, `npm test`, `npx playwright test`. CI (`.github/workflows/ci.yml`) reruns all of these on every PR against a throwaway local Supabase.
 - Git: Conventional Commits (`feat:`, `fix:`, `refactor:`, `test:`, `docs:`); branches `feat/…`, `fix/…`.
 - Safety: never commit `.env*` or keys; never run destructive DB commands without asking.
