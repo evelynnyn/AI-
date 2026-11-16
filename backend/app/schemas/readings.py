@@ -1,13 +1,16 @@
 from datetime import datetime
-from typing import Literal
+from typing import Annotated, Literal
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, StringConstraints
 
 Spread = Literal["daily", "three_card"]
 Reader = Literal["high_priestess", "magician", "fool"]
 
 SPREAD_CARD_COUNT: dict[Spread, int] = {"daily": 1, "three_card": 3}
 MAX_FOLLOW_UPS = 5
+
+# US-02 AC3: a question of only spaces is blank, so strip before checking the length.
+Question = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=200)]
 
 # Card ids follow cards.json (US-19): "major-00" .. "major-21", "wands-01" .. "pentacles-14".
 CARD_ID_PATTERN = r"^(major-(0\d|1\d|2[01])|(wands|cups|swords|pentacles)-(0[1-9]|1[0-4]))$"
@@ -20,12 +23,12 @@ class DrawnCard(BaseModel):
 
 
 class FollowUp(BaseModel):
-    question: str = Field(min_length=1, max_length=200)
+    question: Question
     answer: str = Field(max_length=5_000)
 
 
 class ReadingCreate(BaseModel):
-    question: str = Field(min_length=1, max_length=200)
+    question: Question
     spread: Spread
     reader: Reader = "high_priestess"
     cards: list[DrawnCard] = Field(min_length=1, max_length=3)

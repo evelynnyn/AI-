@@ -1,5 +1,6 @@
 """RLS checks against a local Supabase. Run `supabase start` first, then put the
-local URL and anon key in backend/.env."""
+local URL and anon key in backend/.env. Each test name starts with the acceptance
+criteria it checks (see the GitHub issues)."""
 
 from uuid import uuid4
 
@@ -42,7 +43,7 @@ def sign_up() -> tuple[str, str]:
     return response.user.id, response.session.access_token
 
 
-def test_user_cannot_read_or_delete_other_users_readings() -> None:
+def test_us13_ac5_us30_ac3_user_cannot_read_or_delete_other_users_readings() -> None:
     alice_id, alice_token = sign_up()
     bob_id, bob_token = sign_up()
     alice_repo = SupabaseReadingsRepository(create_user_client(alice_token))
@@ -64,7 +65,7 @@ def test_user_cannot_read_or_delete_other_users_readings() -> None:
     assert len(alice_repo.list_for_user(alice_id)) == 1
 
 
-def test_user_cannot_insert_rows_for_someone_else() -> None:
+def test_us13_ac6_user_cannot_insert_rows_for_someone_else() -> None:
     alice_id, _ = sign_up()
     _, bob_token = sign_up()
     bob_repo = SupabaseReadingsRepository(create_user_client(bob_token))

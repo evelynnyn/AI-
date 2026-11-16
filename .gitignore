@@ -28,6 +28,9 @@ playwright-report/
 supabase/.branches/
 supabase/.temp/
 
+# Claude Code personal settings
+.claude/settings.local.json
+
 # Editors and OS
 .vscode/
 .idea/
