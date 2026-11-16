@@ -1,9 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 
-const PROTECTED_PATHS = ["/readings"];
-
-/** Refresh the Supabase session cookie and guard pages that need a signed-in user. */
+/** Refresh the Supabase session cookie. Every page is open to guests (US-13). */
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
 
@@ -28,17 +26,8 @@ export async function updateSession(request: NextRequest) {
     },
   );
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  const { pathname, search } = request.nextUrl;
-  if (!user && PROTECTED_PATHS.some((path) => pathname.startsWith(path))) {
-    const loginUrl = request.nextUrl.clone();
-    loginUrl.pathname = "/login";
-    loginUrl.search = `?next=${encodeURIComponent(pathname + search)}`;
-    return NextResponse.redirect(loginUrl);
-  }
+  // getUser() refreshes an expired session and writes the new cookies.
+  await supabase.auth.getUser();
 
   return response;
 }

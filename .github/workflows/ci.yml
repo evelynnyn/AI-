@@ -60,6 +60,9 @@ jobs:
       CORS_ORIGINS: http://localhost:3000
       NEXT_PUBLIC_API_URL: http://127.0.0.1:8000
       E2E_SUPABASE: "1"
+      # Fake AI replies: no API key and no cost in CI.
+      LLM_PROVIDER: mock
+      MOCK_LLM_DELAY: "0"
     steps:
       - uses: actions/checkout@v4
 

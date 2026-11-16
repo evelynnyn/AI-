@@ -40,8 +40,13 @@
 │   │   │   └── [feature_name]/        # 各功能頁面
 │   │   ├── components/
 │   │   │   ├── ui/                    # shadcn/ui 元件 (由 CLI 產生)
-│   │   │   └── [feature_name]/        # 各功能專用元件
+│   │   │   ├── common/                # 全站共用元件 (按鈕、裝飾、星空背景)
+│   │   │   ├── card/                  # 牌背、牌面、3D 翻牌 (與牌系無關)
+│   │   │   └── [feature_name]/        # 各功能專用元件 (reading/、history/、auth/)
+│   │   ├── data/catalog/              # backend/app/catalog 的副本 (只供顯示，catalog.test.ts 檢查一致)
 │   │   ├── lib/
+│   │   │   ├── tarot/                 # 牌系、牌陣、洗牌、規則式綜合解讀
+│   │   │   ├── history/               # 占卜紀錄：訪客存瀏覽器、登入存 Supabase (同一介面)
 │   │   │   ├── api/
 │   │   │   │   ├── client.ts          # 呼叫後端 API 的唯一入口 (自動附上 JWT)
 │   │   │   │   └── types.ts           # 由後端 OpenAPI 自動產生，禁止手動修改
@@ -115,7 +120,7 @@
 
 ## 5. UI 與設計系統規範
 - **元件：** 優先使用 shadcn/ui 元件（`npx shadcn@latest add <component>`），沒有合適的才自己寫。
-- **樣式：** 使用 Tailwind CSS；顏色、間距、圓角統一使用設計 token（CSS 變數），不可在元件中寫死色碼。
+- **樣式：** 使用 Tailwind CSS；顏色、間距、圓角統一使用設計 token（CSS 變數），不可在元件中寫死色碼。全站為酒紅＋香檳金深色主題（`globals.css`）：shadcn 語意色（`primary`、`muted-foreground`…）與占卜屋色票（`abyss`、`champagne`…）指向同一組顏色。
 - **共用元件：** 重複出現的 UI 抽成 `src/components/` 下的元件。
 - **版型：** 全域版型寫在 `app/layout.tsx`，各區塊的共用版型使用巢狀 `layout.tsx`。
 - **狀態處理：** 每個資料載入的畫面都要處理「載入中」、「錯誤」、「沒有資料」三種狀態。
