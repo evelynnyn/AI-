@@ -5,7 +5,9 @@ import { drawCards } from "./reading";
 // Each test and step names the acceptance criterion it checks (see the GitHub issues).
 // Needs the backend with LLM_PROVIDER=mock (see README); Supabase is not used by guests.
 
-test("guest: daily card, AI reading, follow-up, then history", async ({ page }) => {
+test("guest: daily card, AI reading, follow-up, then history", async ({
+  page,
+}) => {
   test.skip(
     !process.env.E2E_SUPABASE,
     "set E2E_SUPABASE=1 with the backend running (LLM_PROVIDER=mock)",
@@ -36,7 +38,9 @@ test("guest: daily card, AI reading, follow-up, then history", async ({ page }) 
 
   await test.step("US-08 AC1 / US-11 AC3: the AI reading streams in, marked as AI", async () => {
     const reader = page.getByRole("region", { name: "解讀師的話" });
-    await expect(reader.getByText("測試用的假解讀")).toBeVisible({ timeout: 15_000 });
+    await expect(reader.getByText("測試用的假解讀")).toBeVisible({
+      timeout: 15_000,
+    });
     await expect(reader.getByText("解讀由 AI 產生")).toBeVisible();
   });
 
@@ -51,7 +55,9 @@ test("guest: daily card, AI reading, follow-up, then history", async ({ page }) 
 
   await test.step("US-13 AC10 / US-14 AC4: the guest's reading is in this browser's history", async () => {
     await page.goto("/readings");
-    await expect(page.getByText("紀錄只保存在這台裝置的瀏覽器中")).toBeVisible();
+    await expect(
+      page.getByText("紀錄只保存在這台裝置的瀏覽器中"),
+    ).toBeVisible();
     await page.getByRole("button", { name: /今天我需要留意什麼？/ }).click();
     await expect(page.getByText("測試用的假解讀")).toBeVisible();
     await expect(page.getByText("你問「我該主動一點嗎？」")).toBeVisible();

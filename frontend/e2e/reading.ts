@@ -7,7 +7,9 @@ export async function drawCards(page: Page, count: number) {
 
   for (let i = 1; i <= count; i++) {
     // Fan cards overlap, so dispatch the click instead of aiming the pointer.
-    await page.getByRole("button", { name: `抽第 ${i} 張牌` }).dispatchEvent("click");
+    await page
+      .getByRole("button", { name: `抽第 ${i} 張牌` })
+      .dispatchEvent("click");
   }
 
   if (count > 1) {

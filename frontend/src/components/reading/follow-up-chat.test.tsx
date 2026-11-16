@@ -11,7 +11,7 @@ const READING = {
   reader: "fool" as const,
   spread: "daily" as const,
   question: "今天要注意什麼？",
-  cards: [{ card_id: "sun" }],
+  cards: [{ card_id: "sun", reversed: false }],
 };
 const reader = findReader("fool");
 

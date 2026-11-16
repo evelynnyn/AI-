@@ -72,6 +72,8 @@ test("US-29 / US-13 / US-30: sign up, save a three-card reading to the account, 
 
   await test.step("US-29 AC9: signing out returns to the signed-out header", async () => {
     await page.getByRole("button", { name: "登出" }).click();
-    await expect(page.getByRole("banner").getByRole("link", { name: "登入" })).toBeVisible();
+    await expect(
+      page.getByRole("banner").getByRole("link", { name: "登入" }),
+    ).toBeVisible();
   });
 });

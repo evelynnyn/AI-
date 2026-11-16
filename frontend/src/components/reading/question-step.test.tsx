@@ -39,9 +39,7 @@ describe("QuestionStep", () => {
     const examples = SPREADS.three.examples;
     expect(examples).toHaveLength(3);
 
-    await userEvent.click(
-      screen.getByRole("button", { name: examples[1] }),
-    );
+    await userEvent.click(screen.getByRole("button", { name: examples[1] }));
     await userEvent.click(screen.getByRole("button", { name: "開始洗牌" }));
 
     expect(screen.getByLabelText("你想問什麼？")).toHaveValue(examples[1]);

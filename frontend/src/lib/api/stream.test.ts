@@ -3,9 +3,10 @@ import { describe, expect, it, vi } from "vitest";
 import { fetchSuggestions, StreamError, streamFromApi } from "./stream";
 
 const BODY = {
+  reader: "high-priestess" as const,
   spread: "daily" as const,
   question: "今天要注意什麼？",
-  cards: [{ card_id: "sun" }],
+  cards: [{ card_id: "sun", reversed: false }],
 };
 
 /** A fake fetch that answers with these NDJSON lines. */
