@@ -1,3 +1,5 @@
+"""Service tests. Each test name starts with the acceptance criterion it checks."""
+
 import pytest
 
 from app.schemas.readings import DrawnCard, ReadingCreate
@@ -17,30 +19,40 @@ def three_card_reading() -> ReadingCreate:
     )
 
 
-def test_create_and_list_only_own_readings() -> None:
-    repo = InMemoryReadingsRepository()
-    alice = ReadingsService(repo, "alice")
-    bob = ReadingsService(repo, "bob")
+def test_us13_ac1_saves_reading_with_default_reader() -> None:
+    service = ReadingsService(InMemoryReadingsRepository(), "alice")
 
-    created = alice.create_reading(three_card_reading())
+    created = service.create_reading(three_card_reading())
 
     assert created.reader == "high_priestess"
-    assert [r.id for r in alice.list_readings()] == [created.id]
-    assert bob.list_readings() == []
+    assert created.cards[1] == DrawnCard(position="現在", card_id="major-01", reversed=True)
+    assert [r.id for r in service.list_readings()] == [created.id]
 
 
-def test_rejects_wrong_card_count_for_spread() -> None:
-    service = ReadingsService(InMemoryReadingsRepository(), "alice")
-    data = three_card_reading().model_copy(update={"spread": "daily"})
+@pytest.mark.parametrize(("spread", "expected"), [("daily", 1), ("three_card", 3)])
+def test_us13_ac3_rejects_wrong_card_count_for_spread(spread: str, expected: int) -> None:
+    repo = InMemoryReadingsRepository()
+    service = ReadingsService(repo, "alice")
+    cards = three_card_reading().cards if spread == "daily" else three_card_reading().cards[:1]
+    data = three_card_reading().model_copy(update={"spread": spread, "cards": cards})
 
-    with pytest.raises(InvalidReadingError, match="1 張牌"):
+    with pytest.raises(InvalidReadingError, match=f"{expected} 張牌"):
         service.create_reading(data)
+    assert repo.rows == []
 
 
-def test_cannot_delete_someone_elses_reading() -> None:
+def test_us13_ac5_users_only_see_their_own_readings() -> None:
+    repo = InMemoryReadingsRepository()
+    alice = ReadingsService(repo, "alice")
+    alice.create_reading(three_card_reading())
+
+    assert ReadingsService(repo, "bob").list_readings() == []
+
+
+def test_us30_ac3_cannot_delete_someone_elses_reading() -> None:
     repo = InMemoryReadingsRepository()
     created = ReadingsService(repo, "alice").create_reading(three_card_reading())
 
     with pytest.raises(ReadingNotFoundError):
         ReadingsService(repo, "bob").delete_reading(created.id)
-    assert len(repo.rows) == 1
+    assert [r.id for r in repo.rows] == [created.id]
