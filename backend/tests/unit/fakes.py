@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from uuid import uuid4
 
-from app.schemas.readings import Reading, ReadingCreate
+from app.schemas.readings import Reading, ReadingCreate, ReadingUpdate
 
 
 class InMemoryReadingsRepository:
@@ -20,6 +20,14 @@ class InMemoryReadingsRepository:
         )
         self.rows.append(reading)
         return reading
+
+    def update(self, user_id: str, reading_id: str, data: ReadingUpdate) -> Reading | None:
+        for i, row in enumerate(self.rows):
+            if row.id == reading_id and row.user_id == user_id:
+                self.rows[i] = row.model_copy(update=data.model_dump(exclude_unset=True))
+                self.rows[i] = Reading.model_validate(self.rows[i].model_dump())
+                return self.rows[i]
+        return None
 
     def delete(self, user_id: str, reading_id: str) -> bool:
         before = len(self.rows)

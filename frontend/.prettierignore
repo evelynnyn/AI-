@@ -1,0 +1,2 @@
+# Copies of backend/app/catalog; keep them byte-identical (catalog.test.ts)
+src/data/catalog/*.json

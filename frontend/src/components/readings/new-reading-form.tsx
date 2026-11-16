@@ -58,8 +58,8 @@ export function NewReadingForm() {
     resolver: zodResolver(readingSchema),
     defaultValues: {
       question: "",
-      spread: "three_card",
-      reader: "high_priestess",
+      spread: "three",
+      reader: "high-priestess",
     },
   });
   const questionLength = watch("question")?.length ?? 0;
@@ -85,8 +85,7 @@ export function NewReadingForm() {
       <CardHeader>
         <CardTitle>新的占卜</CardTitle>
         <CardDescription>
-          洗牌與選牌畫面完成前，先由系統隨機從 22
-          張大牌中抽牌，並保存到你的紀錄。
+          洗牌與選牌畫面完成前，先由系統從整副牌隨機抽牌，並保存到你的紀錄。
         </CardDescription>
       </CardHeader>
       <CardContent>

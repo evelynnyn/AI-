@@ -6,7 +6,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type { Reading } from "@/lib/api/client";
-import { cardName, READERS, SPREADS } from "@/lib/tarot/cards";
+import { cardName, positionLabel, READERS, SPREADS } from "@/lib/tarot/cards";
 
 import { DeleteReadingButton } from "./delete-reading-button";
 
@@ -46,7 +46,7 @@ export function ReadingList({ readings }: { readings: Reading[] }) {
                     className="bg-muted rounded-md px-3 py-1.5 text-sm"
                   >
                     <span className="text-muted-foreground">
-                      {card.position}：
+                      {positionLabel(reading.spread, card.position)}：
                     </span>
                     {cardName(card.card_id)}
                     {card.reversed && "（逆位）"}
