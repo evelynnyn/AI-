@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import me, readings
+from app.routers import ai, me, readings
 
 app = FastAPI(title="星語塔羅 API", version="0.1.0")
 
@@ -14,6 +14,7 @@ app.add_middleware(
     allow_headers=["Authorization", "Content-Type"],
 )
 
+app.include_router(ai.router)
 app.include_router(me.router)
 app.include_router(readings.router)
 
