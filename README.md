@@ -25,6 +25,13 @@ Next.js 前端 + FastAPI 後端 + Supabase（登入、資料庫）。架構見 [
    ```
 4. Open http://localhost:3000, create an account, and save a reading at `/readings`.
 
+## AI reader
+
+The backend streams readings from an LLM (`/api/v1/ai/reading`, `/follow-up`, `/follow-up/suggestions`).
+Set `LLM_PROVIDER` in `backend/.env`: `anthropic` (Claude, needs `ANTHROPIC_API_KEY`), `openai`, `groq`,
+or `mock` for fake replies with no key and no cost. Keys stay on the server; see `backend/.env.example`.
+Card, spread and reader data live in `backend/app/catalog/`.
+
 ## Cloud Supabase
 
 Create a project at supabase.com (region: Asia-Pacific), then:

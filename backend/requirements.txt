@@ -3,6 +3,8 @@ uvicorn[standard]==0.54.0
 supabase==2.33.0
 pydantic==2.14.2
 pydantic-settings==2.16.2
+anthropic==2.8.0
+openai==3.51.0
 
 # Dev
 pytest==9.2.0

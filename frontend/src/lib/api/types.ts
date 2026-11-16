@@ -4,6 +4,57 @@
  */
 
 export interface paths {
+  "/api/v1/ai/reading": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Reading */
+    post: operations["reading_api_v1_ai_reading_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/api/v1/ai/follow-up": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Follow Up */
+    post: operations["follow_up_api_v1_ai_follow_up_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
+  "/api/v1/ai/follow-up/suggestions": {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    get?: never;
+    put?: never;
+    /** Suggestions */
+    post: operations["suggestions_api_v1_ai_follow_up_suggestions_post"];
+    delete?: never;
+    options?: never;
+    head?: never;
+    patch?: never;
+    trace?: never;
+  };
   "/api/v1/me": {
     parameters: {
       query?: never;
@@ -77,6 +128,34 @@ export interface paths {
 export type webhooks = Record<string, never>;
 export interface components {
   schemas: {
+    /** AiCard */
+    AiCard: {
+      /** Card Id */
+      card_id: string;
+      /**
+       * Reversed
+       * @default false
+       */
+      reversed: boolean;
+    };
+    /** AiReadingRequest */
+    AiReadingRequest: {
+      /**
+       * Reader
+       * @default high-priestess
+       * @enum {string}
+       */
+      reader: "high-priestess" | "magician" | "fool";
+      /**
+       * Spread
+       * @enum {string}
+       */
+      spread: "daily" | "three" | "lenormand-three" | "lenormand-nine";
+      /** Question */
+      question: string;
+      /** Cards */
+      cards: components["schemas"]["AiCard"][];
+    };
     /** DrawnCard */
     DrawnCard: {
       /** Position */
@@ -91,6 +170,37 @@ export interface components {
     };
     /** FollowUp */
     FollowUp: {
+      /** Question */
+      question: string;
+      /** Answer */
+      answer: string;
+    };
+    /** FollowUpRequest */
+    FollowUpRequest: {
+      /**
+       * Reader
+       * @default high-priestess
+       * @enum {string}
+       */
+      reader: "high-priestess" | "magician" | "fool";
+      /**
+       * Spread
+       * @enum {string}
+       */
+      spread: "daily" | "three" | "lenormand-three" | "lenormand-nine";
+      /** Question */
+      question: string;
+      /** Cards */
+      cards: components["schemas"]["AiCard"][];
+      /** Ai Reading */
+      ai_reading: string;
+      /** History */
+      history?: components["schemas"]["FollowUpTurn"][];
+      /** Follow Up */
+      follow_up: string;
+    };
+    /** FollowUpTurn */
+    FollowUpTurn: {
       /** Question */
       question: string;
       /** Answer */
@@ -160,6 +270,33 @@ export interface components {
       /** Follow Ups */
       follow_ups?: components["schemas"]["FollowUp"][];
     };
+    /** Suggestions */
+    Suggestions: {
+      /** Suggestions */
+      suggestions: string[];
+      /** Generated */
+      generated: boolean;
+    };
+    /** SuggestionsRequest */
+    SuggestionsRequest: {
+      /**
+       * Reader
+       * @default high-priestess
+       * @enum {string}
+       */
+      reader: "high-priestess" | "magician" | "fool";
+      /**
+       * Spread
+       * @enum {string}
+       */
+      spread: "daily" | "three" | "lenormand-three" | "lenormand-nine";
+      /** Question */
+      question: string;
+      /** Cards */
+      cards: components["schemas"]["AiCard"][];
+      /** Ai Reading */
+      ai_reading: string;
+    };
     /** ValidationError */
     ValidationError: {
       /** Location */
@@ -182,6 +319,101 @@ export interface components {
 }
 export type $defs = Record<string, never>;
 export interface operations {
+  reading_api_v1_ai_reading_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["AiReadingRequest"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  follow_up_api_v1_ai_follow_up_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["FollowUpRequest"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content?: never;
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  suggestions_api_v1_ai_follow_up_suggestions_post: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path?: never;
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["SuggestionsRequest"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Suggestions"];
+        };
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
   read_me_api_v1_me_get: {
     parameters: {
       query?: never;

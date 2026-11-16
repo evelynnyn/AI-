@@ -5,6 +5,115 @@
     "version": "0.1.0"
   },
   "paths": {
+    "/api/v1/ai/reading": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "summary": "Reading",
+        "operationId": "reading_api_v1_ai_reading_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AiReadingRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ai/follow-up": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "summary": "Follow Up",
+        "operationId": "follow_up_api_v1_ai_follow_up_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FollowUpRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/ai/follow-up/suggestions": {
+      "post": {
+        "tags": [
+          "ai"
+        ],
+        "summary": "Suggestions",
+        "operationId": "suggestions_api_v1_ai_follow_up_suggestions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SuggestionsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Suggestions"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/v1/me": {
       "get": {
         "tags": [
@@ -174,6 +283,72 @@
   },
   "components": {
     "schemas": {
+      "AiCard": {
+        "properties": {
+          "card_id": {
+            "type": "string",
+            "maxLength": 40,
+            "minLength": 1,
+            "title": "Card Id"
+          },
+          "reversed": {
+            "type": "boolean",
+            "title": "Reversed",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "card_id"
+        ],
+        "title": "AiCard"
+      },
+      "AiReadingRequest": {
+        "properties": {
+          "reader": {
+            "type": "string",
+            "enum": [
+              "high-priestess",
+              "magician",
+              "fool"
+            ],
+            "title": "Reader",
+            "default": "high-priestess"
+          },
+          "spread": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "three",
+              "lenormand-three",
+              "lenormand-nine"
+            ],
+            "title": "Spread"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "cards": {
+            "items": {
+              "$ref": "#/components/schemas/AiCard"
+            },
+            "type": "array",
+            "maxItems": 9,
+            "minItems": 1,
+            "title": "Cards"
+          }
+        },
+        "type": "object",
+        "required": [
+          "spread",
+          "question",
+          "cards"
+        ],
+        "title": "AiReadingRequest"
+      },
       "DrawnCard": {
         "properties": {
           "position": {
@@ -220,6 +395,95 @@
           "answer"
         ],
         "title": "FollowUp"
+      },
+      "FollowUpRequest": {
+        "properties": {
+          "reader": {
+            "type": "string",
+            "enum": [
+              "high-priestess",
+              "magician",
+              "fool"
+            ],
+            "title": "Reader",
+            "default": "high-priestess"
+          },
+          "spread": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "three",
+              "lenormand-three",
+              "lenormand-nine"
+            ],
+            "title": "Spread"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "cards": {
+            "items": {
+              "$ref": "#/components/schemas/AiCard"
+            },
+            "type": "array",
+            "maxItems": 9,
+            "minItems": 1,
+            "title": "Cards"
+          },
+          "ai_reading": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Ai Reading"
+          },
+          "history": {
+            "items": {
+              "$ref": "#/components/schemas/FollowUpTurn"
+            },
+            "type": "array",
+            "title": "History"
+          },
+          "follow_up": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Follow Up"
+          }
+        },
+        "type": "object",
+        "required": [
+          "spread",
+          "question",
+          "cards",
+          "ai_reading",
+          "follow_up"
+        ],
+        "title": "FollowUpRequest"
+      },
+      "FollowUpTurn": {
+        "properties": {
+          "question": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "answer": {
+            "type": "string",
+            "maxLength": 2000,
+            "minLength": 1,
+            "title": "Answer"
+          }
+        },
+        "type": "object",
+        "required": [
+          "question",
+          "answer"
+        ],
+        "title": "FollowUpTurn"
       },
       "HTTPValidationError": {
         "properties": {
@@ -398,6 +662,80 @@
           "cards"
         ],
         "title": "ReadingCreate"
+      },
+      "Suggestions": {
+        "properties": {
+          "suggestions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Suggestions"
+          },
+          "generated": {
+            "type": "boolean",
+            "title": "Generated"
+          }
+        },
+        "type": "object",
+        "required": [
+          "suggestions",
+          "generated"
+        ],
+        "title": "Suggestions"
+      },
+      "SuggestionsRequest": {
+        "properties": {
+          "reader": {
+            "type": "string",
+            "enum": [
+              "high-priestess",
+              "magician",
+              "fool"
+            ],
+            "title": "Reader",
+            "default": "high-priestess"
+          },
+          "spread": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "three",
+              "lenormand-three",
+              "lenormand-nine"
+            ],
+            "title": "Spread"
+          },
+          "question": {
+            "type": "string",
+            "maxLength": 200,
+            "minLength": 1,
+            "title": "Question"
+          },
+          "cards": {
+            "items": {
+              "$ref": "#/components/schemas/AiCard"
+            },
+            "type": "array",
+            "maxItems": 9,
+            "minItems": 1,
+            "title": "Cards"
+          },
+          "ai_reading": {
+            "type": "string",
+            "maxLength": 4000,
+            "minLength": 1,
+            "title": "Ai Reading"
+          }
+        },
+        "type": "object",
+        "required": [
+          "spread",
+          "question",
+          "cards",
+          "ai_reading"
+        ],
+        "title": "SuggestionsRequest"
       },
       "ValidationError": {
         "properties": {

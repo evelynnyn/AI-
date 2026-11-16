@@ -12,6 +12,8 @@ select = ["E", "F", "I", "B", "UP", "SIM", "ANN"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/**" = ["ANN"]
+# Prompt text is prose; wrapping it would change what the model reads.
+"app/services/ai_prompts.py" = ["E501"]
 
 [tool.mypy]
 python_version = "3.12"

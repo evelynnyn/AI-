@@ -63,6 +63,8 @@
 │   │   │   └── [feature_name].py
 │   │   ├── schemas/                   # Pydantic 模型 (請求、回應、資料表對應)
 │   │   │   └── [feature_name].py
+│   │   ├── catalog/                   # 牌組、牌陣、解讀師、牌面描述 (JSON，唯一來源)
+│   │   ├── llm/                       # AI 供應商 (Claude / OpenAI / Groq / mock)，只在後端
 │   │   └── db/
 │   │       └── supabase.py            # Supabase client 初始化
 │   ├── tests/
@@ -82,6 +84,7 @@
 3. **後端分層呼叫：** `routers → services → repositories`，只能由上往下呼叫，不可跳層。路由層不得直接查詢資料庫。
 4. **強型別傳遞：** 後端層與層之間傳遞 Pydantic 模型，不直接傳原始 `dict`；前端使用由 OpenAPI 產生的型別，前後端型別保持一致。
 5. **Server Components 優先：** 前端預設使用 Server Components，只有需要互動（狀態、事件）時才加 `"use client"`。
+6. **AI 只在後端：** 前端只送牌的 id、正逆位與問題；牌義、解讀師設定與 prompt 由後端 `catalog/` 查表組成，API key 只存在後端環境變數。services 透過 `llm/` 的共同介面呼叫 AI，不直接依賴特定供應商。
 
 ---
 
