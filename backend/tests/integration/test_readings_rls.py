@@ -11,7 +11,7 @@ from supabase import create_client
 from app.config import get_settings
 from app.db.supabase import create_user_client
 from app.repositories.readings import SupabaseReadingsRepository
-from app.schemas.readings import DrawnCard, ReadingCreate
+from app.schemas.readings import DrawnCard, FollowUp, ReadingCreate, ReadingUpdate
 
 pytestmark = pytest.mark.integration
 
@@ -54,7 +54,7 @@ def test_us13_ac5_us30_ac3_user_cannot_read_or_delete_other_users_readings() -> 
         ReadingCreate(
             question="RLS 測試",
             spread="daily",
-            cards=[DrawnCard(position="今日", card_id="major-18")],
+            cards=[DrawnCard(position="today", card_id="moon")],
         ),
     )
 
@@ -76,6 +76,37 @@ def test_us13_ac6_user_cannot_insert_rows_for_someone_else() -> None:
             ReadingCreate(
                 question="冒用別人",
                 spread="daily",
-                cards=[DrawnCard(position="今日", card_id="major-15")],
+                cards=[DrawnCard(position="today", card_id="devil")],
             ),
         )
+
+
+def test_us14_ac1_ac2_owner_can_update_but_others_cannot() -> None:
+    alice_id, alice_token = sign_up()
+    bob_id, bob_token = sign_up()
+    alice_repo = SupabaseReadingsRepository(create_user_client(alice_token))
+    bob_repo = SupabaseReadingsRepository(create_user_client(bob_token))
+    reading = alice_repo.create(
+        alice_id,
+        ReadingCreate(
+            question="追問保存",
+            spread="daily",
+            cards=[DrawnCard(position="today", card_id="star")],
+        ),
+    )
+
+    tampered = bob_repo.update(bob_id, reading.id, ReadingUpdate(interpretation="竄改"))
+    updated = alice_repo.update(
+        alice_id,
+        reading.id,
+        ReadingUpdate(
+            interpretation="星星說……",
+            follow_ups=[FollowUp(question="然後呢？", answer="慢慢來。")],
+        ),
+    )
+
+    assert tampered is None
+    assert updated is not None
+    assert updated.interpretation == "星星說……"
+    assert updated.follow_ups == [FollowUp(question="然後呢？", answer="慢慢來。")]
+    assert alice_repo.list_for_user(alice_id)[0].interpretation == "星星說……"

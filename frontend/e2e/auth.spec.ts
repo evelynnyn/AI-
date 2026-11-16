@@ -41,7 +41,7 @@ test("US-29 / US-13 / US-30: sign up, save and delete a reading, then sign out",
 
   await test.step("US-13 AC1: the saved reading appears with its details", async () => {
     await page.getByLabel("你想問什麼？").fill(question);
-    await page.getByLabel("牌陣").selectOption("three_card");
+    await page.getByLabel("牌陣").selectOption("three");
     await page.getByLabel("解讀師").selectOption("magician");
     await page.getByRole("button", { name: "抽牌並保存" }).click();
 

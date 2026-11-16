@@ -104,7 +104,8 @@ export interface paths {
     delete: operations["delete_reading_api_v1_readings__reading_id__delete"];
     options?: never;
     head?: never;
-    patch?: never;
+    /** Update Reading */
+    patch: operations["update_reading_api_v1_readings__reading_id__patch"];
     trace?: never;
   };
   "/api/v1/health": {
@@ -230,16 +231,18 @@ export interface components {
        * Spread
        * @enum {string}
        */
-      spread: "daily" | "three_card";
+      spread: "daily" | "three" | "lenormand-three" | "lenormand-nine";
       /**
        * Reader
        * @enum {string}
        */
-      reader: "high_priestess" | "magician" | "fool";
+      reader: "high-priestess" | "magician" | "fool";
       /** Cards */
       cards: components["schemas"]["DrawnCard"][];
       /** Interpretation */
       interpretation: string | null;
+      /** Suggestions */
+      suggestions: string[];
       /** Follow Ups */
       follow_ups: components["schemas"]["FollowUp"][];
       /**
@@ -256,19 +259,33 @@ export interface components {
        * Spread
        * @enum {string}
        */
-      spread: "daily" | "three_card";
+      spread: "daily" | "three" | "lenormand-three" | "lenormand-nine";
       /**
        * Reader
-       * @default high_priestess
+       * @default high-priestess
        * @enum {string}
        */
-      reader: "high_priestess" | "magician" | "fool";
+      reader: "high-priestess" | "magician" | "fool";
       /** Cards */
       cards: components["schemas"]["DrawnCard"][];
       /** Interpretation */
       interpretation?: string | null;
+      /** Suggestions */
+      suggestions?: string[];
       /** Follow Ups */
       follow_ups?: components["schemas"]["FollowUp"][];
+    };
+    /**
+     * ReadingUpdate
+     * @description Fields filled in after the cards are drawn (US-14). Omitted fields stay as they are.
+     */
+    ReadingUpdate: {
+      /** Interpretation */
+      interpretation?: string | null;
+      /** Suggestions */
+      suggestions?: string[] | null;
+      /** Follow Ups */
+      follow_ups?: components["schemas"]["FollowUp"][] | null;
     };
     /** Suggestions */
     Suggestions: {
@@ -504,6 +521,41 @@ export interface operations {
           [name: string]: unknown;
         };
         content?: never;
+      };
+      /** @description Validation Error */
+      422: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["HTTPValidationError"];
+        };
+      };
+    };
+  };
+  update_reading_api_v1_readings__reading_id__patch: {
+    parameters: {
+      query?: never;
+      header?: never;
+      path: {
+        reading_id: string;
+      };
+      cookie?: never;
+    };
+    requestBody: {
+      content: {
+        "application/json": components["schemas"]["ReadingUpdate"];
+      };
+    };
+    responses: {
+      /** @description Successful Response */
+      200: {
+        headers: {
+          [name: string]: unknown;
+        };
+        content: {
+          "application/json": components["schemas"]["Reading"];
+        };
       };
       /** @description Validation Error */
       422: {

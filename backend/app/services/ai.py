@@ -14,12 +14,12 @@ from collections.abc import AsyncIterator
 from app.catalog import decks, readers, spreads
 from app.llm import ChatMessage, LLMError, LLMErrorKind, LLMProvider
 from app.schemas.ai import (
-    MAX_FOLLOW_UPS,
     AiReadingRequest,
     FollowUpRequest,
     Suggestions,
     SuggestionsRequest,
 )
+from app.schemas.readings import MAX_FOLLOW_UPS
 from app.services import ai_prompts
 from app.services.ai_prompts import ReadingContext, ReadingItem
 from app.services.safety import mentions_self_harm

@@ -215,6 +215,62 @@
       }
     },
     "/api/v1/readings/{reading_id}": {
+      "patch": {
+        "tags": [
+          "readings"
+        ],
+        "summary": "Update Reading",
+        "operationId": "update_reading_api_v1_readings__reading_id__patch",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "reading_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid",
+              "title": "Reading Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReadingUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Reading"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "readings"
@@ -359,7 +415,8 @@
           },
           "card_id": {
             "type": "string",
-            "pattern": "^(major-(0\\d|1\\d|2[01])|(wands|cups|swords|pentacles)-(0[1-9]|1[0-4]))$",
+            "maxLength": 40,
+            "minLength": 1,
             "title": "Card Id"
           },
           "reversed": {
@@ -541,14 +598,16 @@
             "type": "string",
             "enum": [
               "daily",
-              "three_card"
+              "three",
+              "lenormand-three",
+              "lenormand-nine"
             ],
             "title": "Spread"
           },
           "reader": {
             "type": "string",
             "enum": [
-              "high_priestess",
+              "high-priestess",
               "magician",
               "fool"
             ],
@@ -572,6 +631,13 @@
             ],
             "title": "Interpretation"
           },
+          "suggestions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Suggestions"
+          },
           "follow_ups": {
             "items": {
               "$ref": "#/components/schemas/FollowUp"
@@ -594,6 +660,7 @@
           "reader",
           "cards",
           "interpretation",
+          "suggestions",
           "follow_ups",
           "created_at"
         ],
@@ -611,26 +678,28 @@
             "type": "string",
             "enum": [
               "daily",
-              "three_card"
+              "three",
+              "lenormand-three",
+              "lenormand-nine"
             ],
             "title": "Spread"
           },
           "reader": {
             "type": "string",
             "enum": [
-              "high_priestess",
+              "high-priestess",
               "magician",
               "fool"
             ],
             "title": "Reader",
-            "default": "high_priestess"
+            "default": "high-priestess"
           },
           "cards": {
             "items": {
               "$ref": "#/components/schemas/DrawnCard"
             },
             "type": "array",
-            "maxItems": 3,
+            "maxItems": 9,
             "minItems": 1,
             "title": "Cards"
           },
@@ -645,6 +714,14 @@
               }
             ],
             "title": "Interpretation"
+          },
+          "suggestions": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Suggestions"
           },
           "follow_ups": {
             "items": {
@@ -662,6 +739,55 @@
           "cards"
         ],
         "title": "ReadingCreate"
+      },
+      "ReadingUpdate": {
+        "properties": {
+          "interpretation": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 10000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interpretation"
+          },
+          "suggestions": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array",
+                "maxItems": 3
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Suggestions"
+          },
+          "follow_ups": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/FollowUp"
+                },
+                "type": "array",
+                "maxItems": 5
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Follow Ups"
+          }
+        },
+        "type": "object",
+        "title": "ReadingUpdate",
+        "description": "Fields filled in after the cards are drawn (US-14). Omitted fields stay as they are."
       },
       "Suggestions": {
         "properties": {

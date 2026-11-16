@@ -10,11 +10,11 @@ from tests.unit.fakes import InMemoryReadingsRepository
 def three_card_reading() -> ReadingCreate:
     return ReadingCreate(
         question="這份工作適合我嗎？",
-        spread="three_card",
+        spread="three",
         cards=[
-            DrawnCard(position="過去", card_id="major-00"),
-            DrawnCard(position="現在", card_id="major-01", reversed=True),
-            DrawnCard(position="未來", card_id="major-17"),
+            DrawnCard(position="past", card_id="fool"),
+            DrawnCard(position="present", card_id="magician", reversed=True),
+            DrawnCard(position="future", card_id="star"),
         ],
     )
 
@@ -24,12 +24,12 @@ def test_us13_ac1_saves_reading_with_default_reader() -> None:
 
     created = service.create_reading(three_card_reading())
 
-    assert created.reader == "high_priestess"
-    assert created.cards[1] == DrawnCard(position="現在", card_id="major-01", reversed=True)
+    assert created.reader == "high-priestess"
+    assert created.cards[1] == DrawnCard(position="present", card_id="magician", reversed=True)
     assert [r.id for r in service.list_readings()] == [created.id]
 
 
-@pytest.mark.parametrize(("spread", "expected"), [("daily", 1), ("three_card", 3)])
+@pytest.mark.parametrize(("spread", "expected"), [("daily", 1), ("three", 3)])
 def test_us13_ac3_rejects_wrong_card_count_for_spread(spread: str, expected: int) -> None:
     repo = InMemoryReadingsRepository()
     service = ReadingsService(repo, "alice")

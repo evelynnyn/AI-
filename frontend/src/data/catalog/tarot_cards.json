@@ -1,0 +1,1640 @@
+[
+  {
+    "id": "fool",
+    "nameZh": "愚者",
+    "nameEn": "The Fool",
+    "arcana": "major",
+    "suit": null,
+    "number": 0,
+    "uprightKeywords": [
+      "開始",
+      "自由",
+      "冒險"
+    ],
+    "reversedKeywords": [
+      "魯莽",
+      "猶豫不前",
+      "缺乏計畫"
+    ],
+    "uprightMeaning": "一段全新旅程正要開始。帶著信任與好奇踏出去，不必事事想清楚，你的天真正是此刻最大的力量。",
+    "reversedMeaning": "衝動、魯莽，或因害怕未知而遲遲不敢出發。檢查一下：你是缺乏準備，還是缺乏勇氣？",
+    "image": "/cards/fool.webp"
+  },
+  {
+    "id": "magician",
+    "nameZh": "魔術師",
+    "nameEn": "The Magician",
+    "arcana": "major",
+    "suit": null,
+    "number": 1,
+    "uprightKeywords": [
+      "創造",
+      "意志",
+      "資源"
+    ],
+    "reversedKeywords": [
+      "操弄",
+      "空談",
+      "能力未發揮"
+    ],
+    "uprightMeaning": "你手上已經握有需要的一切工具。把想法化為行動的時刻到了，專注意志，就能讓事情成形。",
+    "reversedMeaning": "能力未被發揮、計畫流於空談，或有人言過其實。留意操弄與自我欺騙。",
+    "image": "/cards/magician.webp"
+  },
+  {
+    "id": "high-priestess",
+    "nameZh": "女祭司",
+    "nameEn": "The High Priestess",
+    "arcana": "major",
+    "suit": null,
+    "number": 2,
+    "uprightKeywords": [
+      "直覺",
+      "奧秘",
+      "靜默"
+    ],
+    "reversedKeywords": [
+      "忽略直覺",
+      "秘密浮現",
+      "表面化"
+    ],
+    "uprightMeaning": "答案不在外面，而在你內心深處。放慢腳步，傾聽直覺與夢境，有些事還不到揭曉的時候。",
+    "reversedMeaning": "忽略內在聲音、過度依賴他人意見，或隱藏的資訊即將浮出水面。",
+    "image": "/cards/high-priestess.webp"
+  },
+  {
+    "id": "empress",
+    "nameZh": "皇后",
+    "nameEn": "The Empress",
+    "arcana": "major",
+    "suit": null,
+    "number": 3,
+    "uprightKeywords": [
+      "豐盛",
+      "滋養",
+      "美"
+    ],
+    "reversedKeywords": [
+      "過度付出",
+      "依賴",
+      "創造力枯竭"
+    ],
+    "uprightMeaning": "豐收與孕育的能量。適合照顧自己、享受感官之美，也代表創作、關係或計畫正在開花結果。",
+    "reversedMeaning": "過度付出而忽略自己、創造力枯竭，或依賴與佔有。先把愛還給自己。",
+    "image": "/cards/empress.webp"
+  },
+  {
+    "id": "emperor",
+    "nameZh": "皇帝",
+    "nameEn": "The Emperor",
+    "arcana": "major",
+    "suit": null,
+    "number": 4,
+    "uprightKeywords": [
+      "秩序",
+      "權威",
+      "穩定"
+    ],
+    "reversedKeywords": [
+      "控制欲",
+      "僵化",
+      "失去立場"
+    ],
+    "uprightMeaning": "建立結構、設下規則、承擔責任。以理性與紀律掌握局面，你有能力成為可靠的支柱。",
+    "reversedMeaning": "控制欲過強、僵化固執，或在權威面前失去自己的立場。",
+    "image": "/cards/emperor.webp"
+  },
+  {
+    "id": "hierophant",
+    "nameZh": "教皇",
+    "nameEn": "The Hierophant",
+    "arcana": "major",
+    "suit": null,
+    "number": 5,
+    "uprightKeywords": [
+      "傳統",
+      "信念",
+      "指引"
+    ],
+    "reversedKeywords": [
+      "打破常規",
+      "盲從",
+      "教條"
+    ],
+    "uprightMeaning": "向傳統、制度或有經驗的導師學習。遵循既有的道路，會帶來穩定與歸屬感。",
+    "reversedMeaning": "挑戰既定規範、走自己的路；或是盲從教條，被「應該」綁住。",
+    "image": "/cards/hierophant.webp"
+  },
+  {
+    "id": "lovers",
+    "nameZh": "戀人",
+    "nameEn": "The Lovers",
+    "arcana": "major",
+    "suit": null,
+    "number": 6,
+    "uprightKeywords": [
+      "愛",
+      "選擇",
+      "契合"
+    ],
+    "reversedKeywords": [
+      "失衡",
+      "價值衝突",
+      "猶豫"
+    ],
+    "uprightMeaning": "深刻的連結與吸引，也代表一個重要的選擇。依循你真正的價值觀，而不只是一時的喜好。",
+    "reversedMeaning": "關係失衡、價值觀衝突，或在選擇面前猶豫不決。",
+    "image": "/cards/lovers.webp"
+  },
+  {
+    "id": "chariot",
+    "nameZh": "戰車",
+    "nameEn": "The Chariot",
+    "arcana": "major",
+    "suit": null,
+    "number": 7,
+    "uprightKeywords": [
+      "意志",
+      "前進",
+      "勝利"
+    ],
+    "reversedKeywords": [
+      "失控",
+      "迷失方向",
+      "用力過猛"
+    ],
+    "uprightMeaning": "以堅定意志駕馭相反的力量，朝目標全速前進。自律帶來勝利。",
+    "reversedMeaning": "方向迷失、失去控制，或用力過猛。先停下來確認自己要去哪裡。",
+    "image": "/cards/chariot.webp"
+  },
+  {
+    "id": "strength",
+    "nameZh": "力量",
+    "nameEn": "Strength",
+    "arcana": "major",
+    "suit": null,
+    "number": 8,
+    "uprightKeywords": [
+      "勇氣",
+      "溫柔",
+      "耐心"
+    ],
+    "reversedKeywords": [
+      "自我懷疑",
+      "情緒失控",
+      "壓抑"
+    ],
+    "uprightMeaning": "真正的力量是溫柔的。以耐心與慈悲馴服內心的猛獸，你比自己以為的更堅強。",
+    "reversedMeaning": "自我懷疑、情緒失控，或用壓抑代替面對。對自己溫柔一點。",
+    "image": "/cards/strength.webp"
+  },
+  {
+    "id": "hermit",
+    "nameZh": "隱者",
+    "nameEn": "The Hermit",
+    "arcana": "major",
+    "suit": null,
+    "number": 9,
+    "uprightKeywords": [
+      "內省",
+      "獨處",
+      "智慧"
+    ],
+    "reversedKeywords": [
+      "孤立",
+      "逃避獨處",
+      "封閉"
+    ],
+    "uprightMeaning": "退一步、與自己獨處。提著內在的燈，在安靜中找到真正的答案。",
+    "reversedMeaning": "過度孤立、與世隔絕；或是害怕獨處，不斷用外界填滿自己。",
+    "image": "/cards/hermit.webp"
+  },
+  {
+    "id": "wheel-of-fortune",
+    "nameZh": "命運之輪",
+    "nameEn": "Wheel of Fortune",
+    "arcana": "major",
+    "suit": null,
+    "number": 10,
+    "uprightKeywords": [
+      "轉變",
+      "週期",
+      "機運"
+    ],
+    "reversedKeywords": [
+      "低潮",
+      "抗拒改變",
+      "時機未到"
+    ],
+    "uprightMeaning": "命運之輪正在轉動，好運與轉機到來。順勢而為，抓住變化中的機會。",
+    "reversedMeaning": "暫時的低潮或阻礙。記得輪子會繼續轉，抗拒改變只會更辛苦。",
+    "image": "/cards/wheel-of-fortune.webp"
+  },
+  {
+    "id": "justice",
+    "nameZh": "正義",
+    "nameEn": "Justice",
+    "arcana": "major",
+    "suit": null,
+    "number": 11,
+    "uprightKeywords": [
+      "公平",
+      "真相",
+      "因果"
+    ],
+    "reversedKeywords": [
+      "不公",
+      "逃避責任",
+      "偏頗"
+    ],
+    "uprightMeaning": "誠實面對事實，做出公正的決定。你種下的因，正在結出相應的果。",
+    "reversedMeaning": "不公平、逃避責任，或對自己不誠實。有些帳終究要面對。",
+    "image": "/cards/justice.webp"
+  },
+  {
+    "id": "hanged-man",
+    "nameZh": "倒吊人",
+    "nameEn": "The Hanged Man",
+    "arcana": "major",
+    "suit": null,
+    "number": 12,
+    "uprightKeywords": [
+      "暫停",
+      "臣服",
+      "新視角"
+    ],
+    "reversedKeywords": [
+      "拖延",
+      "無謂犧牲",
+      "抗拒放手"
+    ],
+    "uprightMeaning": "暫時停下、換個角度看世界。看似被困住，其實是醞釀與領悟的時刻。",
+    "reversedMeaning": "無謂的拖延、為犧牲而犧牲，或抗拒必要的放手。",
+    "image": "/cards/hanged-man.webp"
+  },
+  {
+    "id": "death",
+    "nameZh": "死神",
+    "nameEn": "Death",
+    "arcana": "major",
+    "suit": null,
+    "number": 13,
+    "uprightKeywords": [
+      "結束",
+      "蛻變",
+      "重生"
+    ],
+    "reversedKeywords": [
+      "抗拒結束",
+      "停滯",
+      "緊抓不放"
+    ],
+    "uprightMeaning": "一個階段的結束，為新的開始騰出空間。放下已經完成使命的事物，蛻變正在發生。",
+    "reversedMeaning": "抗拒改變、緊抓不放，讓本該結束的事拖得更久。",
+    "image": "/cards/death.webp"
+  },
+  {
+    "id": "temperance",
+    "nameZh": "節制",
+    "nameEn": "Temperance",
+    "arcana": "major",
+    "suit": null,
+    "number": 14,
+    "uprightKeywords": [
+      "平衡",
+      "調和",
+      "耐心"
+    ],
+    "reversedKeywords": [
+      "失衡",
+      "過度",
+      "步調混亂"
+    ],
+    "uprightMeaning": "找到中庸之道，把不同的元素慢慢調和。耐心與節奏會帶來療癒。",
+    "reversedMeaning": "失衡、過度或匱乏，生活節奏被打亂。需要重新調整步調。",
+    "image": "/cards/temperance.webp"
+  },
+  {
+    "id": "devil",
+    "nameZh": "惡魔",
+    "nameEn": "The Devil",
+    "arcana": "major",
+    "suit": null,
+    "number": 15,
+    "uprightKeywords": [
+      "執著",
+      "慾望",
+      "束縛"
+    ],
+    "reversedKeywords": [
+      "掙脫",
+      "覺察",
+      "重獲自由"
+    ],
+    "uprightMeaning": "看清讓你上癮或受困的事物：慾望、恐懼、不健康的關係。鎖鏈其實是鬆的。",
+    "reversedMeaning": "開始掙脫束縛、意識到自己的執著，重新拿回主導權。",
+    "image": "/cards/devil.webp"
+  },
+  {
+    "id": "tower",
+    "nameZh": "高塔",
+    "nameEn": "The Tower",
+    "arcana": "major",
+    "suit": null,
+    "number": 16,
+    "uprightKeywords": [
+      "劇變",
+      "崩解",
+      "覺醒"
+    ],
+    "reversedKeywords": [
+      "延遲崩解",
+      "恐懼改變",
+      "逃過一劫"
+    ],
+    "uprightMeaning": "突如其來的變動，打破建立在虛假基礎上的事物。痛，但讓真相得以出現。",
+    "reversedMeaning": "勉強避開了崩塌，或害怕改變而延後必然的瓦解。",
+    "image": "/cards/tower.webp"
+  },
+  {
+    "id": "star",
+    "nameZh": "星星",
+    "nameEn": "The Star",
+    "arcana": "major",
+    "suit": null,
+    "number": 17,
+    "uprightKeywords": [
+      "希望",
+      "療癒",
+      "靈感"
+    ],
+    "reversedKeywords": [
+      "失去信心",
+      "沮喪",
+      "斷線"
+    ],
+    "uprightMeaning": "暴風雨過後的寧靜與希望。相信未來，宇宙正在療癒你，也為你指引方向。",
+    "reversedMeaning": "失去信心、感到絕望或與靈感斷線。希望還在，只是暫時看不見。",
+    "image": "/cards/star.webp"
+  },
+  {
+    "id": "moon",
+    "nameZh": "月亮",
+    "nameEn": "The Moon",
+    "arcana": "major",
+    "suit": null,
+    "number": 18,
+    "uprightKeywords": [
+      "不安",
+      "幻象",
+      "潛意識"
+    ],
+    "reversedKeywords": [
+      "迷霧散去",
+      "釋放恐懼",
+      "真相浮現"
+    ],
+    "uprightMeaning": "事情並不如表面所見。不安與迷惘浮現，信任直覺，慢慢穿越迷霧。",
+    "reversedMeaning": "迷霧逐漸散去，恐懼被看清，真相慢慢浮出。",
+    "image": "/cards/moon.webp"
+  },
+  {
+    "id": "sun",
+    "nameZh": "太陽",
+    "nameEn": "The Sun",
+    "arcana": "major",
+    "suit": null,
+    "number": 19,
+    "uprightKeywords": [
+      "喜悅",
+      "成功",
+      "活力"
+    ],
+    "reversedKeywords": [
+      "暫時陰霾",
+      "過度樂觀",
+      "延遲"
+    ],
+    "uprightMeaning": "光明、溫暖與成功。坦然展現真實的自己，一切都在閃閃發亮。",
+    "reversedMeaning": "快樂被暫時遮蔽，或過度樂觀。光還在，只是需要再等一下。",
+    "image": "/cards/sun.webp"
+  },
+  {
+    "id": "judgement",
+    "nameZh": "審判",
+    "nameEn": "Judgement",
+    "arcana": "major",
+    "suit": null,
+    "number": 20,
+    "uprightKeywords": [
+      "覺醒",
+      "召喚",
+      "重生"
+    ],
+    "reversedKeywords": [
+      "自我批判",
+      "逃避召喚",
+      "遲疑"
+    ],
+    "uprightMeaning": "聽見內心的召喚，做出重要的決定。回顧過去、原諒自己，迎接新的身分。",
+    "reversedMeaning": "自我批判、逃避召喚，或對過去的決定耿耿於懷。",
+    "image": "/cards/judgement.webp"
+  },
+  {
+    "id": "world",
+    "nameZh": "世界",
+    "nameEn": "The World",
+    "arcana": "major",
+    "suit": null,
+    "number": 21,
+    "uprightKeywords": [
+      "完成",
+      "圓滿",
+      "整合"
+    ],
+    "reversedKeywords": [
+      "未完成",
+      "缺乏收尾",
+      "停滯"
+    ],
+    "uprightMeaning": "一個循環圓滿完成。享受成就與整合的喜悅，下一段旅程即將展開。",
+    "reversedMeaning": "只差臨門一腳、未完成的事，或缺乏收尾。把最後一塊拼圖放上。",
+    "image": "/cards/world.webp"
+  },
+  {
+    "id": "ace-of-wands",
+    "nameZh": "權杖王牌",
+    "nameEn": "Ace of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 1,
+    "uprightKeywords": [
+      "靈感",
+      "熱情",
+      "開端"
+    ],
+    "reversedKeywords": [
+      "延遲",
+      "動力不足",
+      "方向不明"
+    ],
+    "uprightMeaning": "新的靈感與熱情被點燃，是開始行動的好時機。",
+    "reversedMeaning": "熱情受阻、延遲，或動力不足、不知從何開始。",
+    "image": null
+  },
+  {
+    "id": "two-of-wands",
+    "nameZh": "權杖二",
+    "nameEn": "Two of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 2,
+    "uprightKeywords": [
+      "規劃",
+      "眺望",
+      "抉擇"
+    ],
+    "reversedKeywords": [
+      "害怕改變",
+      "計畫停滯",
+      "猶豫"
+    ],
+    "uprightMeaning": "站在起點規劃未來，看見更大的世界在等你。",
+    "reversedMeaning": "害怕踏出舒適圈，計畫停留在紙上。",
+    "image": null
+  },
+  {
+    "id": "three-of-wands",
+    "nameZh": "權杖三",
+    "nameEn": "Three of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 3,
+    "uprightKeywords": [
+      "拓展",
+      "遠見",
+      "等待"
+    ],
+    "reversedKeywords": [
+      "延誤",
+      "視野受限",
+      "受挫"
+    ],
+    "uprightMeaning": "向外拓展、眼光放遠，你的努力正在遠方醞釀成果。",
+    "reversedMeaning": "進展延遲、視野受限，或計畫不如預期。",
+    "image": null
+  },
+  {
+    "id": "four-of-wands",
+    "nameZh": "權杖四",
+    "nameEn": "Four of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 4,
+    "uprightKeywords": [
+      "慶祝",
+      "歸屬",
+      "穩定"
+    ],
+    "reversedKeywords": [
+      "不安定",
+      "慶祝延後",
+      "家庭摩擦"
+    ],
+    "uprightMeaning": "值得慶祝的里程碑，穩定的基礎與溫暖的歸屬。",
+    "reversedMeaning": "不安定感、慶祝延後，或家庭中的小摩擦。",
+    "image": null
+  },
+  {
+    "id": "five-of-wands",
+    "nameZh": "權杖五",
+    "nameEn": "Five of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 5,
+    "uprightKeywords": [
+      "競爭",
+      "衝突",
+      "角力"
+    ],
+    "reversedKeywords": [
+      "避免衝突",
+      "內耗",
+      "壓抑不滿"
+    ],
+    "uprightMeaning": "意見衝突、多方角力，良性競爭能激發成長。",
+    "reversedMeaning": "刻意迴避衝突，或內耗終於告一段落。",
+    "image": null
+  },
+  {
+    "id": "six-of-wands",
+    "nameZh": "權杖六",
+    "nameEn": "Six of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 6,
+    "uprightKeywords": [
+      "勝利",
+      "肯定",
+      "榮耀"
+    ],
+    "reversedKeywords": [
+      "自信不足",
+      "遲來的認可",
+      "驕傲"
+    ],
+    "uprightMeaning": "努力被看見，迎來公開的勝利與肯定。",
+    "reversedMeaning": "自信不足、認可遲來，或因驕傲而失足。",
+    "image": null
+  },
+  {
+    "id": "seven-of-wands",
+    "nameZh": "權杖七",
+    "nameEn": "Seven of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 7,
+    "uprightKeywords": [
+      "堅守",
+      "捍衛",
+      "挑戰"
+    ],
+    "reversedKeywords": [
+      "疲於防守",
+      "放棄",
+      "被壓倒"
+    ],
+    "uprightMeaning": "面對挑戰堅守立場，你站在有利的位置。",
+    "reversedMeaning": "疲於防守、想要放棄，感覺被壓倒。",
+    "image": null
+  },
+  {
+    "id": "eight-of-wands",
+    "nameZh": "權杖八",
+    "nameEn": "Eight of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 8,
+    "uprightKeywords": [
+      "迅速",
+      "消息",
+      "推進"
+    ],
+    "reversedKeywords": [
+      "延誤",
+      "混亂",
+      "操之過急"
+    ],
+    "uprightMeaning": "事情快速推進，消息即將到來。",
+    "reversedMeaning": "延誤、方向混亂，或操之過急。",
+    "image": null
+  },
+  {
+    "id": "nine-of-wands",
+    "nameZh": "權杖九",
+    "nameEn": "Nine of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 9,
+    "uprightKeywords": [
+      "堅持",
+      "警覺",
+      "韌性"
+    ],
+    "reversedKeywords": [
+      "精疲力竭",
+      "防衛過度",
+      "偏執"
+    ],
+    "uprightMeaning": "已經走了很遠，再堅持一下，終點就在前方。",
+    "reversedMeaning": "精疲力竭、防衛過度，你需要休息。",
+    "image": null
+  },
+  {
+    "id": "ten-of-wands",
+    "nameZh": "權杖十",
+    "nameEn": "Ten of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 10,
+    "uprightKeywords": [
+      "重擔",
+      "責任",
+      "壓力"
+    ],
+    "reversedKeywords": [
+      "卸下重擔",
+      "委派",
+      "崩潰邊緣"
+    ],
+    "uprightMeaning": "肩上扛了太多責任，負擔越來越沉重。",
+    "reversedMeaning": "學會放下、分擔或委派，卸下不屬於你的重量。",
+    "image": null
+  },
+  {
+    "id": "page-of-wands",
+    "nameZh": "權杖侍者",
+    "nameEn": "Page of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 11,
+    "uprightKeywords": [
+      "好奇",
+      "探索",
+      "好消息"
+    ],
+    "reversedKeywords": [
+      "三分鐘熱度",
+      "消息延遲",
+      "不成熟"
+    ],
+    "uprightMeaning": "充滿好奇心的新點子或好消息出現。",
+    "reversedMeaning": "三分鐘熱度、消息延遲，或想法不夠成熟。",
+    "image": null
+  },
+  {
+    "id": "knight-of-wands",
+    "nameZh": "權杖騎士",
+    "nameEn": "Knight of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 12,
+    "uprightKeywords": [
+      "冒險",
+      "衝勁",
+      "熱烈"
+    ],
+    "reversedKeywords": [
+      "衝動",
+      "魯莽",
+      "半途而廢"
+    ],
+    "uprightMeaning": "帶著熱情與衝勁勇往直前，充滿冒險精神。",
+    "reversedMeaning": "衝動魯莽、急躁，容易半途而廢。",
+    "image": null
+  },
+  {
+    "id": "queen-of-wands",
+    "nameZh": "權杖皇后",
+    "nameEn": "Queen of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 13,
+    "uprightKeywords": [
+      "自信",
+      "魅力",
+      "溫暖"
+    ],
+    "reversedKeywords": [
+      "嫉妒",
+      "自我懷疑",
+      "情緒化"
+    ],
+    "uprightMeaning": "自信溫暖、魅力四射，獨立而有感染力。",
+    "reversedMeaning": "嫉妒、自我懷疑，或情緒起伏劇烈。",
+    "image": null
+  },
+  {
+    "id": "king-of-wands",
+    "nameZh": "權杖國王",
+    "nameEn": "King of Wands",
+    "arcana": "minor",
+    "suit": "wands",
+    "number": 14,
+    "uprightKeywords": [
+      "遠見",
+      "領導",
+      "果斷"
+    ],
+    "reversedKeywords": [
+      "專斷",
+      "急躁",
+      "期待過高"
+    ],
+    "uprightMeaning": "有遠見的領導者，果斷而有魄力。",
+    "reversedMeaning": "專斷獨行、急躁，或對他人期待過高。",
+    "image": null
+  },
+  {
+    "id": "ace-of-cups",
+    "nameZh": "聖杯王牌",
+    "nameEn": "Ace of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 1,
+    "uprightKeywords": [
+      "新感情",
+      "愛",
+      "直覺"
+    ],
+    "reversedKeywords": [
+      "情感封閉",
+      "空虛",
+      "壓抑"
+    ],
+    "uprightMeaning": "新的情感湧現，愛與直覺滿溢。",
+    "reversedMeaning": "情感封閉、內在空虛，或壓抑真實感受。",
+    "image": null
+  },
+  {
+    "id": "two-of-cups",
+    "nameZh": "聖杯二",
+    "nameEn": "Two of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 2,
+    "uprightKeywords": [
+      "吸引",
+      "連結",
+      "伙伴"
+    ],
+    "reversedKeywords": [
+      "失衡",
+      "溝通斷裂",
+      "分離"
+    ],
+    "uprightMeaning": "相互吸引、彼此理解的深刻連結。",
+    "reversedMeaning": "關係失衡、溝通斷裂，或心意不再相通。",
+    "image": null
+  },
+  {
+    "id": "three-of-cups",
+    "nameZh": "聖杯三",
+    "nameEn": "Three of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 3,
+    "uprightKeywords": [
+      "友誼",
+      "慶祝",
+      "團聚"
+    ],
+    "reversedKeywords": [
+      "過度放縱",
+      "小圈圈",
+      "第三者"
+    ],
+    "uprightMeaning": "與朋友相聚慶祝，分享喜悅。",
+    "reversedMeaning": "過度放縱、小圈圈，或關係中出現第三者。",
+    "image": null
+  },
+  {
+    "id": "four-of-cups",
+    "nameZh": "聖杯四",
+    "nameEn": "Four of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 4,
+    "uprightKeywords": [
+      "倦怠",
+      "冷漠",
+      "錯過"
+    ],
+    "reversedKeywords": [
+      "重新振作",
+      "接受機會",
+      "覺醒"
+    ],
+    "uprightMeaning": "對現狀感到倦怠，可能忽略了眼前的機會。",
+    "reversedMeaning": "重新打起精神，願意接受新的可能。",
+    "image": null
+  },
+  {
+    "id": "five-of-cups",
+    "nameZh": "聖杯五",
+    "nameEn": "Five of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 5,
+    "uprightKeywords": [
+      "失落",
+      "遺憾",
+      "悲傷"
+    ],
+    "reversedKeywords": [
+      "接受",
+      "原諒",
+      "走出悲傷"
+    ],
+    "uprightMeaning": "沉浸於失去的事物，忘了身後還有留下的。",
+    "reversedMeaning": "慢慢走出悲傷，學會接受與原諒。",
+    "image": null
+  },
+  {
+    "id": "six-of-cups",
+    "nameZh": "聖杯六",
+    "nameEn": "Six of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 6,
+    "uprightKeywords": [
+      "懷舊",
+      "純真",
+      "回憶"
+    ],
+    "reversedKeywords": [
+      "困在過去",
+      "不切實際",
+      "向前看"
+    ],
+    "uprightMeaning": "懷念過去的美好，舊人舊事重新浮現。",
+    "reversedMeaning": "困在回憶裡，是時候向前看了。",
+    "image": null
+  },
+  {
+    "id": "seven-of-cups",
+    "nameZh": "聖杯七",
+    "nameEn": "Seven of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 7,
+    "uprightKeywords": [
+      "幻想",
+      "選擇",
+      "迷惑"
+    ],
+    "reversedKeywords": [
+      "看清現實",
+      "做出決定",
+      "清醒"
+    ],
+    "uprightMeaning": "選擇太多、幻想太美，難以分辨真實。",
+    "reversedMeaning": "看清現實，終於能做出決定。",
+    "image": null
+  },
+  {
+    "id": "eight-of-cups",
+    "nameZh": "聖杯八",
+    "nameEn": "Eight of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 8,
+    "uprightKeywords": [
+      "離開",
+      "放下",
+      "追尋"
+    ],
+    "reversedKeywords": [
+      "害怕離開",
+      "徘徊",
+      "逃避"
+    ],
+    "uprightMeaning": "離開不再滿足你的事物，去尋找更深的意義。",
+    "reversedMeaning": "害怕離開、徘徊不定，或逃避問題。",
+    "image": null
+  },
+  {
+    "id": "nine-of-cups",
+    "nameZh": "聖杯九",
+    "nameEn": "Nine of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 9,
+    "uprightKeywords": [
+      "心願",
+      "滿足",
+      "享受"
+    ],
+    "reversedKeywords": [
+      "自滿",
+      "貪多",
+      "內在空虛"
+    ],
+    "uprightMeaning": "心願達成，好好享受此刻的滿足。",
+    "reversedMeaning": "自滿，或發現物質無法填補內心。",
+    "image": null
+  },
+  {
+    "id": "ten-of-cups",
+    "nameZh": "聖杯十",
+    "nameEn": "Ten of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 10,
+    "uprightKeywords": [
+      "圓滿",
+      "家庭",
+      "和樂"
+    ],
+    "reversedKeywords": [
+      "家庭不和",
+      "理想落差",
+      "疏離"
+    ],
+    "uprightMeaning": "情感圓滿、家庭和樂，幸福就在身邊。",
+    "reversedMeaning": "家庭不和，或理想與現實存在落差。",
+    "image": null
+  },
+  {
+    "id": "page-of-cups",
+    "nameZh": "聖杯侍者",
+    "nameEn": "Page of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 11,
+    "uprightKeywords": [
+      "萌芽",
+      "訊息",
+      "浪漫"
+    ],
+    "reversedKeywords": [
+      "情緒不成熟",
+      "逃避",
+      "失望"
+    ],
+    "uprightMeaning": "情感萌芽、來自直覺的訊息或浪漫邀約。",
+    "reversedMeaning": "情緒不成熟、逃避感受。",
+    "image": null
+  },
+  {
+    "id": "knight-of-cups",
+    "nameZh": "聖杯騎士",
+    "nameEn": "Knight of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 12,
+    "uprightKeywords": [
+      "追求",
+      "浪漫",
+      "提議"
+    ],
+    "reversedKeywords": [
+      "不切實際",
+      "善變",
+      "承諾不可靠"
+    ],
+    "uprightMeaning": "浪漫的追求者，帶著邀請或提議而來。",
+    "reversedMeaning": "不切實際、情緒善變，承諾不可靠。",
+    "image": null
+  },
+  {
+    "id": "queen-of-cups",
+    "nameZh": "聖杯皇后",
+    "nameEn": "Queen of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 13,
+    "uprightKeywords": [
+      "同理",
+      "溫柔",
+      "敏銳"
+    ],
+    "reversedKeywords": [
+      "情緒依賴",
+      "界線模糊",
+      "過度敏感"
+    ],
+    "uprightMeaning": "溫柔而富同理心，直覺非常敏銳。",
+    "reversedMeaning": "情緒依賴、界線模糊，容易被他人情緒淹沒。",
+    "image": null
+  },
+  {
+    "id": "king-of-cups",
+    "nameZh": "聖杯國王",
+    "nameEn": "King of Cups",
+    "arcana": "minor",
+    "suit": "cups",
+    "number": 14,
+    "uprightKeywords": [
+      "成熟",
+      "包容",
+      "穩定"
+    ],
+    "reversedKeywords": [
+      "情緒操控",
+      "壓抑",
+      "冷淡"
+    ],
+    "uprightMeaning": "情緒成熟穩定，能包容他人。",
+    "reversedMeaning": "情緒操控，或長期壓抑感受。",
+    "image": null
+  },
+  {
+    "id": "ace-of-swords",
+    "nameZh": "寶劍王牌",
+    "nameEn": "Ace of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 1,
+    "uprightKeywords": [
+      "突破",
+      "真相",
+      "清晰"
+    ],
+    "reversedKeywords": [
+      "混亂",
+      "誤判",
+      "言語傷人"
+    ],
+    "uprightMeaning": "思緒清晰、看見真相，做出果斷的突破。",
+    "reversedMeaning": "思緒混亂、判斷錯誤，或言語造成傷害。",
+    "image": null
+  },
+  {
+    "id": "two-of-swords",
+    "nameZh": "寶劍二",
+    "nameEn": "Two of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 2,
+    "uprightKeywords": [
+      "僵局",
+      "抉擇",
+      "逃避"
+    ],
+    "reversedKeywords": [
+      "資訊過載",
+      "面對選擇",
+      "猶豫"
+    ],
+    "uprightMeaning": "陷入兩難僵局，刻意不去看清楚。",
+    "reversedMeaning": "資訊過載，或終於願意面對選擇。",
+    "image": null
+  },
+  {
+    "id": "three-of-swords",
+    "nameZh": "寶劍三",
+    "nameEn": "Three of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 3,
+    "uprightKeywords": [
+      "心碎",
+      "悲傷",
+      "痛苦"
+    ],
+    "reversedKeywords": [
+      "療傷",
+      "釋放",
+      "復原"
+    ],
+    "uprightMeaning": "心碎與悲傷，痛苦的真相被揭露。",
+    "reversedMeaning": "開始療傷，釋放累積的痛苦。",
+    "image": null
+  },
+  {
+    "id": "four-of-swords",
+    "nameZh": "寶劍四",
+    "nameEn": "Four of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 4,
+    "uprightKeywords": [
+      "休息",
+      "復原",
+      "沉澱"
+    ],
+    "reversedKeywords": [
+      "焦躁",
+      "重新出發",
+      "倦怠"
+    ],
+    "uprightMeaning": "需要休息與復原，讓心靜下來沉澱。",
+    "reversedMeaning": "焦躁不安，或是該重新出發了。",
+    "image": null
+  },
+  {
+    "id": "five-of-swords",
+    "nameZh": "寶劍五",
+    "nameEn": "Five of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 5,
+    "uprightKeywords": [
+      "爭執",
+      "勝負",
+      "代價"
+    ],
+    "reversedKeywords": [
+      "和解",
+      "放下",
+      "後悔"
+    ],
+    "uprightMeaning": "爭執中贏了面子卻輸了裡子。",
+    "reversedMeaning": "願意和解，放下勝負之心。",
+    "image": null
+  },
+  {
+    "id": "six-of-swords",
+    "nameZh": "寶劍六",
+    "nameEn": "Six of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 6,
+    "uprightKeywords": [
+      "過渡",
+      "離開",
+      "平靜"
+    ],
+    "reversedKeywords": [
+      "無法離開",
+      "包袱",
+      "反覆"
+    ],
+    "uprightMeaning": "離開困境，正在走向更平靜的地方。",
+    "reversedMeaning": "無法離開，或心中的包袱還沒解開。",
+    "image": null
+  },
+  {
+    "id": "seven-of-swords",
+    "nameZh": "寶劍七",
+    "nameEn": "Seven of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 7,
+    "uprightKeywords": [
+      "策略",
+      "隱瞞",
+      "獨行"
+    ],
+    "reversedKeywords": [
+      "真相浮現",
+      "良心不安",
+      "坦白"
+    ],
+    "uprightMeaning": "運用策略獨自行動，也要留意隱瞞與欺騙。",
+    "reversedMeaning": "真相浮現、良心不安，計畫被識破。",
+    "image": null
+  },
+  {
+    "id": "eight-of-swords",
+    "nameZh": "寶劍八",
+    "nameEn": "Eight of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 8,
+    "uprightKeywords": [
+      "受困",
+      "設限",
+      "無助"
+    ],
+    "reversedKeywords": [
+      "掙脫",
+      "看見出口",
+      "釋放"
+    ],
+    "uprightMeaning": "感覺被困住，但束縛多半來自自己的想法。",
+    "reversedMeaning": "看見出口，開始掙脫束縛。",
+    "image": null
+  },
+  {
+    "id": "nine-of-swords",
+    "nameZh": "寶劍九",
+    "nameEn": "Nine of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 9,
+    "uprightKeywords": [
+      "焦慮",
+      "失眠",
+      "擔憂"
+    ],
+    "reversedKeywords": [
+      "減輕焦慮",
+      "求助",
+      "希望"
+    ],
+    "uprightMeaning": "焦慮與過度擔憂讓你難以入眠。",
+    "reversedMeaning": "恐懼逐漸減輕，願意尋求幫助。",
+    "image": null
+  },
+  {
+    "id": "ten-of-swords",
+    "nameZh": "寶劍十",
+    "nameEn": "Ten of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 10,
+    "uprightKeywords": [
+      "結束",
+      "谷底",
+      "終結"
+    ],
+    "reversedKeywords": [
+      "復原",
+      "重生",
+      "拒絕放手"
+    ],
+    "uprightMeaning": "觸及谷底，最壞的已經過去。",
+    "reversedMeaning": "慢慢復原，或仍拒絕放手。",
+    "image": null
+  },
+  {
+    "id": "page-of-swords",
+    "nameZh": "寶劍侍者",
+    "nameEn": "Page of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 11,
+    "uprightKeywords": [
+      "好奇",
+      "觀察",
+      "求知"
+    ],
+    "reversedKeywords": [
+      "八卦",
+      "尖銳",
+      "輕率"
+    ],
+    "uprightMeaning": "敏銳觀察、渴望知道真相。",
+    "reversedMeaning": "八卦是非、言語尖銳。",
+    "image": null
+  },
+  {
+    "id": "knight-of-swords",
+    "nameZh": "寶劍騎士",
+    "nameEn": "Knight of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 12,
+    "uprightKeywords": [
+      "果斷",
+      "直接",
+      "疾行"
+    ],
+    "reversedKeywords": [
+      "魯莽",
+      "衝動",
+      "傷人"
+    ],
+    "uprightMeaning": "果斷直接、全速向目標衝刺。",
+    "reversedMeaning": "魯莽行事、言語傷人。",
+    "image": null
+  },
+  {
+    "id": "queen-of-swords",
+    "nameZh": "寶劍皇后",
+    "nameEn": "Queen of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 13,
+    "uprightKeywords": [
+      "清晰",
+      "獨立",
+      "直言"
+    ],
+    "reversedKeywords": [
+      "冷漠",
+      "苛刻",
+      "刻薄"
+    ],
+    "uprightMeaning": "頭腦清晰、獨立，敢於直言。",
+    "reversedMeaning": "冷漠苛刻，用理性築起高牆。",
+    "image": null
+  },
+  {
+    "id": "king-of-swords",
+    "nameZh": "寶劍國王",
+    "nameEn": "King of Swords",
+    "arcana": "minor",
+    "suit": "swords",
+    "number": 14,
+    "uprightKeywords": [
+      "理性",
+      "權威",
+      "公正"
+    ],
+    "reversedKeywords": [
+      "操弄",
+      "冷酷",
+      "濫權"
+    ],
+    "uprightMeaning": "理性權威，能做出公正判斷。",
+    "reversedMeaning": "操弄他人、冷酷無情。",
+    "image": null
+  },
+  {
+    "id": "ace-of-pentacles",
+    "nameZh": "錢幣王牌",
+    "nameEn": "Ace of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 1,
+    "uprightKeywords": [
+      "機會",
+      "財富",
+      "扎實"
+    ],
+    "reversedKeywords": [
+      "錯失機會",
+      "規劃不周",
+      "財務不穩"
+    ],
+    "uprightMeaning": "新的財務或工作機會出現，一個扎實的開始。",
+    "reversedMeaning": "錯失機會，或規劃不夠周全。",
+    "image": null
+  },
+  {
+    "id": "two-of-pentacles",
+    "nameZh": "錢幣二",
+    "nameEn": "Two of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 2,
+    "uprightKeywords": [
+      "平衡",
+      "彈性",
+      "應變"
+    ],
+    "reversedKeywords": [
+      "分身乏術",
+      "失衡",
+      "混亂"
+    ],
+    "uprightMeaning": "靈活平衡多件事，彈性應變。",
+    "reversedMeaning": "分身乏術、收支失衡。",
+    "image": null
+  },
+  {
+    "id": "three-of-pentacles",
+    "nameZh": "錢幣三",
+    "nameEn": "Three of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 3,
+    "uprightKeywords": [
+      "合作",
+      "技藝",
+      "認可"
+    ],
+    "reversedKeywords": [
+      "合作不順",
+      "品質不佳",
+      "缺乏認可"
+    ],
+    "uprightMeaning": "團隊合作順利，你的技藝被看見。",
+    "reversedMeaning": "合作不順、品質不佳。",
+    "image": null
+  },
+  {
+    "id": "four-of-pentacles",
+    "nameZh": "錢幣四",
+    "nameEn": "Four of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 4,
+    "uprightKeywords": [
+      "守成",
+      "掌控",
+      "保守"
+    ],
+    "reversedKeywords": [
+      "吝嗇",
+      "揮霍",
+      "執著"
+    ],
+    "uprightMeaning": "守住既有成果，追求安全與掌控。",
+    "reversedMeaning": "過度吝嗇或揮霍，緊抓不放。",
+    "image": null
+  },
+  {
+    "id": "five-of-pentacles",
+    "nameZh": "錢幣五",
+    "nameEn": "Five of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 5,
+    "uprightKeywords": [
+      "匱乏",
+      "困難",
+      "孤立"
+    ],
+    "reversedKeywords": [
+      "走出困境",
+      "接受援助",
+      "復原"
+    ],
+    "uprightMeaning": "面臨匱乏與困難，感覺被排除在外。",
+    "reversedMeaning": "走出困境，願意接受援助。",
+    "image": null
+  },
+  {
+    "id": "six-of-pentacles",
+    "nameZh": "錢幣六",
+    "nameEn": "Six of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 6,
+    "uprightKeywords": [
+      "給予",
+      "接受",
+      "慷慨"
+    ],
+    "reversedKeywords": [
+      "不對等",
+      "附帶條件",
+      "自私"
+    ],
+    "uprightMeaning": "慷慨的給予與接受，資源流動公平。",
+    "reversedMeaning": "關係不對等，或援助附帶條件。",
+    "image": null
+  },
+  {
+    "id": "seven-of-pentacles",
+    "nameZh": "錢幣七",
+    "nameEn": "Seven of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 7,
+    "uprightKeywords": [
+      "耐心",
+      "評估",
+      "等待"
+    ],
+    "reversedKeywords": [
+      "缺乏耐心",
+      "低回報",
+      "焦慮"
+    ],
+    "uprightMeaning": "耐心等待收成，評估自己的投入。",
+    "reversedMeaning": "缺乏耐心，或投入與回報不成正比。",
+    "image": null
+  },
+  {
+    "id": "eight-of-pentacles",
+    "nameZh": "錢幣八",
+    "nameEn": "Eight of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 8,
+    "uprightKeywords": [
+      "專注",
+      "鑽研",
+      "精進"
+    ],
+    "reversedKeywords": [
+      "敷衍",
+      "完美主義",
+      "倦怠"
+    ],
+    "uprightMeaning": "專注鑽研，一步步精進技能。",
+    "reversedMeaning": "敷衍了事，或陷入完美主義。",
+    "image": null
+  },
+  {
+    "id": "nine-of-pentacles",
+    "nameZh": "錢幣九",
+    "nameEn": "Nine of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 9,
+    "uprightKeywords": [
+      "獨立",
+      "豐盛",
+      "享受"
+    ],
+    "reversedKeywords": [
+      "過度工作",
+      "依賴",
+      "炫耀"
+    ],
+    "uprightMeaning": "自給自足，享受努力的成果。",
+    "reversedMeaning": "過度工作，或在經濟上依賴他人。",
+    "image": null
+  },
+  {
+    "id": "ten-of-pentacles",
+    "nameZh": "錢幣十",
+    "nameEn": "Ten of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 10,
+    "uprightKeywords": [
+      "傳承",
+      "穩定",
+      "家業"
+    ],
+    "reversedKeywords": [
+      "家產糾紛",
+      "根基不穩",
+      "失落"
+    ],
+    "uprightMeaning": "家族與長久的穩定，財富的傳承。",
+    "reversedMeaning": "家產糾紛，或根基不穩。",
+    "image": null
+  },
+  {
+    "id": "page-of-pentacles",
+    "nameZh": "錢幣侍者",
+    "nameEn": "Page of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 11,
+    "uprightKeywords": [
+      "學習",
+      "計畫",
+      "踏實"
+    ],
+    "reversedKeywords": [
+      "拖延",
+      "不專注",
+      "缺乏進展"
+    ],
+    "uprightMeaning": "踏實學習，新計畫正在起步。",
+    "reversedMeaning": "拖延、缺乏專注。",
+    "image": null
+  },
+  {
+    "id": "knight-of-pentacles",
+    "nameZh": "錢幣騎士",
+    "nameEn": "Knight of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 12,
+    "uprightKeywords": [
+      "勤勉",
+      "可靠",
+      "穩健"
+    ],
+    "reversedKeywords": [
+      "停滯",
+      "固執",
+      "無聊"
+    ],
+    "uprightMeaning": "勤勉可靠，穩紮穩打地前進。",
+    "reversedMeaning": "停滯、固執，或感到無聊。",
+    "image": null
+  },
+  {
+    "id": "queen-of-pentacles",
+    "nameZh": "錢幣皇后",
+    "nameEn": "Queen of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 13,
+    "uprightKeywords": [
+      "務實",
+      "照顧",
+      "豐盛"
+    ],
+    "reversedKeywords": [
+      "忽略自己",
+      "失衡",
+      "佔有"
+    ],
+    "uprightMeaning": "務實而溫暖，懂得照顧自己與他人。",
+    "reversedMeaning": "忽略自己，工作與家庭失衡。",
+    "image": null
+  },
+  {
+    "id": "king-of-pentacles",
+    "nameZh": "錢幣國王",
+    "nameEn": "King of Pentacles",
+    "arcana": "minor",
+    "suit": "pentacles",
+    "number": 14,
+    "uprightKeywords": [
+      "富足",
+      "穩健",
+      "成就"
+    ],
+    "reversedKeywords": [
+      "貪婪",
+      "固執",
+      "物質主義"
+    ],
+    "uprightMeaning": "事業有成、富足穩健。",
+    "reversedMeaning": "貪婪、固執，過度重視物質。",
+    "image": null
+  }
+]

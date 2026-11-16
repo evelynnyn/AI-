@@ -1,0 +1,542 @@
+[
+  {
+    "id": "rider",
+    "nameZh": "騎士",
+    "nameEn": "Rider",
+    "number": 1,
+    "playingCard": "9♥",
+    "keywords": [
+      "消息",
+      "訪客",
+      "速度"
+    ],
+    "meaning": "新消息或訪客即將到來，事情會加速推進。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "clover",
+    "nameZh": "幸運草",
+    "nameEn": "Clover",
+    "number": 2,
+    "playingCard": "6♦",
+    "keywords": [
+      "小幸運",
+      "機會",
+      "短暫"
+    ],
+    "meaning": "意料之外的小確幸。機會來得快也去得快，要即時把握。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "ship",
+    "nameZh": "船",
+    "nameEn": "Ship",
+    "number": 3,
+    "playingCard": "10♠",
+    "keywords": [
+      "旅行",
+      "遠方",
+      "變動"
+    ],
+    "meaning": "出發、旅行或與遠方有關的事，代表向外移動與內心的渴望。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "house",
+    "nameZh": "房子",
+    "nameEn": "House",
+    "number": 4,
+    "playingCard": "K♥",
+    "keywords": [
+      "家",
+      "穩定",
+      "安全感"
+    ],
+    "meaning": "家庭、居所與安全感，事情建立在穩固的基礎上。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "tree",
+    "nameZh": "樹",
+    "nameEn": "Tree",
+    "number": 5,
+    "playingCard": "7♥",
+    "keywords": [
+      "健康",
+      "成長",
+      "根基"
+    ],
+    "meaning": "緩慢而穩定的成長，與健康、生命力和長久的根基有關。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "clouds",
+    "nameZh": "雲",
+    "nameEn": "Clouds",
+    "number": 6,
+    "playingCard": "K♣",
+    "keywords": [
+      "迷惘",
+      "不明",
+      "困惑"
+    ],
+    "meaning": "局勢尚不明朗，判斷容易受情緒干擾，需要耐心等待雲散。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "snake",
+    "nameZh": "蛇",
+    "nameEn": "Snake",
+    "number": 7,
+    "playingCard": "Q♣",
+    "keywords": [
+      "複雜",
+      "誘惑",
+      "迂迴"
+    ],
+    "meaning": "事情繞了彎、變得複雜，也可能有誘惑或心機，需要智慧應對。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "coffin",
+    "nameZh": "棺材",
+    "nameEn": "Coffin",
+    "number": 8,
+    "playingCard": "9♦",
+    "keywords": [
+      "結束",
+      "休止",
+      "轉化"
+    ],
+    "meaning": "某件事告一段落。結束帶來空間，讓新的開始得以出現。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "bouquet",
+    "nameZh": "花束",
+    "nameEn": "Bouquet",
+    "number": 9,
+    "playingCard": "Q♠",
+    "keywords": [
+      "禮物",
+      "讚美",
+      "喜悅"
+    ],
+    "meaning": "收到禮物、邀請或讚美，帶來愉快而美好的心情。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "scythe",
+    "nameZh": "鐮刀",
+    "nameEn": "Scythe",
+    "number": 10,
+    "playingCard": "J♦",
+    "keywords": [
+      "突然",
+      "切斷",
+      "決斷"
+    ],
+    "meaning": "突如其來的事件或果斷的決定，快刀斬亂麻。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "whip",
+    "nameZh": "鞭子",
+    "nameEn": "Whip",
+    "number": 11,
+    "playingCard": "J♣",
+    "keywords": [
+      "衝突",
+      "爭論",
+      "重複"
+    ],
+    "meaning": "爭執、反覆的模式或高強度的付出，需要留意溝通方式。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "birds",
+    "nameZh": "鳥",
+    "nameEn": "Birds",
+    "number": 12,
+    "playingCard": "7♦",
+    "keywords": [
+      "溝通",
+      "交談",
+      "緊張"
+    ],
+    "meaning": "頻繁的對話與交流，也可能帶來些許緊張或閒言閒語。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "child",
+    "nameZh": "孩子",
+    "nameEn": "Child",
+    "number": 13,
+    "playingCard": "J♠",
+    "keywords": [
+      "新開始",
+      "純真",
+      "小"
+    ],
+    "meaning": "新的開始與純真的心態，或是規模小、剛起步的事物。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "fox",
+    "nameZh": "狐狸",
+    "nameEn": "Fox",
+    "number": 14,
+    "playingCard": "9♣",
+    "keywords": [
+      "謹慎",
+      "策略",
+      "工作"
+    ],
+    "meaning": "保持警覺、聰明行事。也代表工作與謀生之道。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "bear",
+    "nameZh": "熊",
+    "nameEn": "Bear",
+    "number": 15,
+    "playingCard": "10♣",
+    "keywords": [
+      "力量",
+      "財務",
+      "權威"
+    ],
+    "meaning": "強大的力量與資源，或有影響力的人物，與財務管理有關。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "stars",
+    "nameZh": "星星",
+    "nameEn": "Stars",
+    "number": 16,
+    "playingCard": "6♥",
+    "keywords": [
+      "希望",
+      "指引",
+      "願景"
+    ],
+    "meaning": "方向清晰、願望可期，前方有星光為你指路。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "stork",
+    "nameZh": "鸛鳥",
+    "nameEn": "Stork",
+    "number": 17,
+    "playingCard": "Q♥",
+    "keywords": [
+      "改變",
+      "遷移",
+      "進步"
+    ],
+    "meaning": "正向的改變與更新，可能是搬遷或生活方式的轉換。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "dog",
+    "nameZh": "狗",
+    "nameEn": "Dog",
+    "number": 18,
+    "playingCard": "10♥",
+    "keywords": [
+      "友誼",
+      "忠誠",
+      "信任"
+    ],
+    "meaning": "忠實的朋友與可靠的支持，身邊有值得信任的人。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "tower",
+    "nameZh": "塔",
+    "nameEn": "Tower",
+    "number": 19,
+    "playingCard": "6♠",
+    "keywords": [
+      "機構",
+      "獨立",
+      "界線"
+    ],
+    "meaning": "組織、制度或獨處。也提醒你設下界線、保持適當距離。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "garden",
+    "nameZh": "花園",
+    "nameEn": "Garden",
+    "number": 20,
+    "playingCard": "8♠",
+    "keywords": [
+      "社交",
+      "群眾",
+      "公開"
+    ],
+    "meaning": "社交場合、群體活動與公開的事，人脈會帶來機會。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "mountain",
+    "nameZh": "山",
+    "nameEn": "Mountain",
+    "number": 21,
+    "playingCard": "8♣",
+    "keywords": [
+      "阻礙",
+      "延遲",
+      "挑戰"
+    ],
+    "meaning": "眼前有障礙需要克服。事情會延遲，但並非不可能。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "crossroads",
+    "nameZh": "十字路口",
+    "nameEn": "Crossroads",
+    "number": 22,
+    "playingCard": "Q♦",
+    "keywords": [
+      "選擇",
+      "分岔",
+      "決定"
+    ],
+    "meaning": "面臨選擇，眼前不只一條路，需要做出決定。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "mice",
+    "nameZh": "老鼠",
+    "nameEn": "Mice",
+    "number": 23,
+    "playingCard": "7♣",
+    "keywords": [
+      "損耗",
+      "焦慮",
+      "流失"
+    ],
+    "meaning": "資源或精力正慢慢流失，擔憂與壓力在累積。",
+    "tone": -1,
+    "image": null
+  },
+  {
+    "id": "heart",
+    "nameZh": "心",
+    "nameEn": "Heart",
+    "number": 24,
+    "playingCard": "J♥",
+    "keywords": [
+      "愛",
+      "情感",
+      "熱情"
+    ],
+    "meaning": "愛與溫柔的情感，代表真心與熱情。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "ring",
+    "nameZh": "戒指",
+    "nameEn": "Ring",
+    "number": 25,
+    "playingCard": "A♣",
+    "keywords": [
+      "承諾",
+      "契約",
+      "循環"
+    ],
+    "meaning": "承諾、合約或關係的連結，也代表反覆出現的循環。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "book",
+    "nameZh": "書",
+    "nameEn": "Book",
+    "number": 26,
+    "playingCard": "10♦",
+    "keywords": [
+      "秘密",
+      "知識",
+      "學習"
+    ],
+    "meaning": "尚未揭曉的資訊或秘密，也代表學習與研究。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "letter",
+    "nameZh": "信",
+    "nameEn": "Letter",
+    "number": 27,
+    "playingCard": "7♠",
+    "keywords": [
+      "文件",
+      "訊息",
+      "書面"
+    ],
+    "meaning": "書面訊息、文件或通知，消息會以文字的形式到來。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "man",
+    "nameZh": "男人",
+    "nameEn": "Man",
+    "number": 28,
+    "playingCard": "A♥",
+    "keywords": [
+      "男性",
+      "問卜者",
+      "對方"
+    ],
+    "meaning": "代表男性問卜者，或問題中的重要男性。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "woman",
+    "nameZh": "女人",
+    "nameEn": "Woman",
+    "number": 29,
+    "playingCard": "A♠",
+    "keywords": [
+      "女性",
+      "問卜者",
+      "對方"
+    ],
+    "meaning": "代表女性問卜者，或問題中的重要女性。",
+    "tone": 0,
+    "image": null
+  },
+  {
+    "id": "lily",
+    "nameZh": "百合",
+    "nameEn": "Lily",
+    "number": 30,
+    "playingCard": "K♠",
+    "keywords": [
+      "平靜",
+      "成熟",
+      "和諧"
+    ],
+    "meaning": "平和、成熟與智慧，也與長輩或家族有關。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "sun",
+    "nameZh": "太陽",
+    "nameEn": "Sun",
+    "number": 31,
+    "playingCard": "A♦",
+    "keywords": [
+      "成功",
+      "能量",
+      "樂觀"
+    ],
+    "meaning": "強大的正能量。成功與光明，事情順利發展。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "moon",
+    "nameZh": "月亮",
+    "nameEn": "Moon",
+    "number": 32,
+    "playingCard": "8♥",
+    "keywords": [
+      "名聲",
+      "情緒",
+      "直覺"
+    ],
+    "meaning": "情緒與直覺，也代表被看見、獲得認可與名聲。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "key",
+    "nameZh": "鑰匙",
+    "nameEn": "Key",
+    "number": 33,
+    "playingCard": "8♦",
+    "keywords": [
+      "解答",
+      "關鍵",
+      "確定"
+    ],
+    "meaning": "關鍵的解答與突破。這件事很重要，而且一定會發生。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "fish",
+    "nameZh": "魚",
+    "nameEn": "Fish",
+    "number": 34,
+    "playingCard": "K♦",
+    "keywords": [
+      "金錢",
+      "豐盛",
+      "流動"
+    ],
+    "meaning": "財務、生意與豐盛，資源自由地流動。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "anchor",
+    "nameZh": "錨",
+    "nameEn": "Anchor",
+    "number": 35,
+    "playingCard": "9♠",
+    "keywords": [
+      "穩定",
+      "堅持",
+      "長久"
+    ],
+    "meaning": "穩定而持久。堅守目標，就能抵達終點。",
+    "tone": 1,
+    "image": null
+  },
+  {
+    "id": "cross",
+    "nameZh": "十字架",
+    "nameEn": "Cross",
+    "number": 36,
+    "playingCard": "6♣",
+    "keywords": [
+      "負擔",
+      "責任",
+      "命運"
+    ],
+    "meaning": "必須承擔的責任或考驗，帶有命中注定的意味。",
+    "tone": -1,
+    "image": null
+  }
+]

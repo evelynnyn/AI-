@@ -1,15 +1,10 @@
 """Requests for the AI reader. The frontend sends only ids and the question (SEC-03);
 card names, keywords and prompts are looked up on the server."""
 
-from typing import Annotated
-
-from pydantic import BaseModel, Field, StringConstraints
+from pydantic import BaseModel, Field
 
 from app.catalog import ReaderId, SpreadId
-
-MAX_FOLLOW_UPS = 5
-
-Question = Annotated[str, StringConstraints(strip_whitespace=True, min_length=1, max_length=200)]
+from app.schemas.readings import Question
 
 
 class AiCard(BaseModel):

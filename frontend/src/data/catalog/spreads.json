@@ -1,0 +1,147 @@
+[
+  {
+    "id": "daily",
+    "deckId": "tarot",
+    "nameZh": "每日一牌",
+    "nameEn": "Daily Card",
+    "description": "抽一張牌，看看今天宇宙想提醒你什麼。",
+    "icon": "☉",
+    "positions": [
+      {
+        "id": "today",
+        "label": "今日指引",
+        "meaning": "今天值得留意的能量與提醒"
+      }
+    ],
+    "examples": [
+      "今天我需要留意什麼？",
+      "今天該用什麼心態面對工作？",
+      "今天在感情上有什麼訊息？"
+    ],
+    "defaultQuestion": "今日指引"
+  },
+  {
+    "id": "three",
+    "deckId": "tarot",
+    "nameZh": "三張牌陣",
+    "nameEn": "Past · Present · Future",
+    "description": "過去、現在、未來，看清一件事的來龍去脈與走向。",
+    "icon": "☽",
+    "positions": [
+      {
+        "id": "past",
+        "label": "過去",
+        "meaning": "影響此事的過往與根源"
+      },
+      {
+        "id": "present",
+        "label": "現在",
+        "meaning": "目前的狀態與核心課題"
+      },
+      {
+        "id": "future",
+        "label": "未來",
+        "meaning": "照目前方向發展下去的可能走向"
+      }
+    ],
+    "examples": [
+      "這段感情接下來會如何發展？",
+      "我目前的工作方向適合我嗎？",
+      "我該如何突破現在的困境？"
+    ],
+    "defaultQuestion": "此刻的指引"
+  },
+  {
+    "id": "lenormand-three",
+    "deckId": "lenormand",
+    "nameZh": "三張牌線",
+    "nameEn": "Line of Three",
+    "description": "雷諾曼的牌要連起來讀，三張牌組成一句話，簡潔回答你的問題。",
+    "icon": "✧",
+    "positions": [
+      {
+        "id": "start",
+        "label": "開端",
+        "meaning": "事情的起點或觸發點"
+      },
+      {
+        "id": "core",
+        "label": "核心",
+        "meaning": "這件事的重心"
+      },
+      {
+        "id": "outcome",
+        "label": "走向",
+        "meaning": "接下來的發展"
+      }
+    ],
+    "examples": [
+      "這週的工作會順利嗎？",
+      "對方對我有什麼想法？",
+      "這次的計畫會有什麼結果？"
+    ],
+    "defaultQuestion": "此刻的訊息"
+  },
+  {
+    "id": "lenormand-nine",
+    "deckId": "lenormand",
+    "nameZh": "九宮格",
+    "nameEn": "Nine Box",
+    "description": "三欄是過去、現在、未來，三列是想法、現況、潛意識，全面看一件事。",
+    "icon": "❖",
+    "columns": 3,
+    "positions": [
+      {
+        "id": "past-mind",
+        "label": "過去・想法",
+        "meaning": "過去的想法與期待"
+      },
+      {
+        "id": "present-mind",
+        "label": "現在・想法",
+        "meaning": "你目前心裡想的"
+      },
+      {
+        "id": "future-mind",
+        "label": "未來・想法",
+        "meaning": "未來會浮現的想法"
+      },
+      {
+        "id": "past",
+        "label": "過去",
+        "meaning": "已經發生、正在離開的事"
+      },
+      {
+        "id": "center",
+        "label": "核心",
+        "meaning": "整件事的核心"
+      },
+      {
+        "id": "future",
+        "label": "未來",
+        "meaning": "即將發生的事"
+      },
+      {
+        "id": "past-deep",
+        "label": "過去・潛意識",
+        "meaning": "埋在過去的影響"
+      },
+      {
+        "id": "present-deep",
+        "label": "現在・潛意識",
+        "meaning": "你沒察覺的現況"
+      },
+      {
+        "id": "future-deep",
+        "label": "未來・潛意識",
+        "meaning": "暗中醞釀的走向"
+      }
+    ],
+    "examples": [
+      "我和他的關係目前是什麼狀態？",
+      "我的事業接下來會如何發展？",
+      "這段時間我需要注意什麼？"
+    ],
+    "defaultQuestion": "全面的指引"
+  }
+]

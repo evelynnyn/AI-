@@ -55,6 +55,6 @@ describe("NewReadingForm", () => {
       reader: "fool",
     });
     expect(body.cards).toHaveLength(1);
-    expect(body.cards[0].position).toBe("今日");
+    expect(body.cards[0].position).toBe("today");
   });
 });
