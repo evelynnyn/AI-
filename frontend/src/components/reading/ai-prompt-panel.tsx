@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { PillButton as Button } from "@/components/common/pill-button";
 
-/** 常用 AI 的網址（複製後開新分頁貼上） */
+/** Popular AI chat sites (copy the prompt, paste it in a new tab) */
 const AI_LINKS = [
   { name: "ChatGPT", href: "https://chatgpt.com/" },
   { name: "Claude", href: "https://claude.ai/new" },
@@ -11,8 +11,8 @@ const AI_LINKS = [
 ];
 
 /**
- * 「讓 AI 幫你解讀」：一鍵複製提示詞，並提供常用 AI 的連結。
- * 也可以展開預覽，手動選取文字（剪貼簿無法使用時的備案）。
+ * "Ask an AI": copy the prompt in one tap, with links to popular AI chats.
+ * The preview can also be expanded to select the text by hand (fallback when the clipboard is unavailable).
  */
 export function AiPromptPanel({ prompt }: { prompt: string }) {
   const [copied, setCopied] = useState(false);
@@ -22,11 +22,11 @@ export function AiPromptPanel({ prompt }: { prompt: string }) {
   const copy = async () => {
     let ok = false;
     try {
-      // 剪貼簿 API 只在 https 或 localhost 可用
+      // The clipboard API only works on https or localhost
       await navigator.clipboard.writeText(prompt);
       ok = true;
     } catch {
-      // 備案：展開預覽並全選，讓使用者自己按複製
+      // Fallback: expand the preview and select it all so the user can copy
       setOpen(true);
       requestAnimationFrame(() => textRef.current?.select());
     }

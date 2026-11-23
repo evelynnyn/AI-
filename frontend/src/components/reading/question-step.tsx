@@ -1,7 +1,10 @@
 "use client";
 
+import { zodResolver } from "@hookform/resolvers/zod";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import type { ChangeEvent } from "react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { PillButton } from "@/components/common/pill-button";
 import type { ReaderId } from "@/lib/tarot/readers";
@@ -11,6 +14,16 @@ import { cn } from "@/lib/utils";
 import { ReaderPicker } from "./reader-picker";
 
 export const QUESTION_MAX = 200;
+
+export const questionSchema = z.object({
+  question: z
+    .string()
+    .trim()
+    .min(1, "請輸入想問的問題")
+    .max(QUESTION_MAX, `問題最多 ${QUESTION_MAX} 個字`),
+});
+
+type QuestionForm = z.input<typeof questionSchema>;
 
 interface QuestionStepProps {
   spread: Spread;
@@ -30,7 +43,23 @@ export function QuestionStep({
   onReaderChange,
   onSubmit,
 }: QuestionStepProps) {
-  const [error, setError] = useState<string | null>(null);
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    clearErrors,
+    formState: { errors },
+  } = useForm<QuestionForm>({
+    resolver: zodResolver(questionSchema),
+    defaultValues: { question },
+  });
+  const error = errors.question?.message;
+  const field = register("question", {
+    onChange: (e: ChangeEvent<HTMLTextAreaElement>) => {
+      onChange(e.target.value);
+      clearErrors("question");
+    },
+  });
 
   return (
     <motion.section
@@ -52,25 +81,14 @@ export function QuestionStep({
       <form
         className="mt-8 w-full"
         noValidate
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (!question.trim()) {
-            setError("請輸入想問的問題");
-            return;
-          }
-          onSubmit();
-        }}
+        onSubmit={handleSubmit(() => onSubmit())}
       >
         <label htmlFor="question" className="sr-only">
           你想問什麼？
         </label>
         <textarea
           id="question"
-          value={question}
-          onChange={(e) => {
-            onChange(e.target.value);
-            setError(null);
-          }}
+          {...field}
           rows={3}
           maxLength={QUESTION_MAX}
           aria-invalid={!!error}
@@ -101,8 +119,9 @@ export function QuestionStep({
                 <button
                   type="button"
                   onClick={() => {
+                    setValue("question", example);
                     onChange(example);
-                    setError(null);
+                    clearErrors("question");
                   }}
                   aria-pressed={selected}
                   className={cn(

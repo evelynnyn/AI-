@@ -6,16 +6,16 @@ import type { FanOrigin } from "./card-fan";
 
 export interface Flight {
   key: string;
-  /** 目標牌陣位置索引 */
+  /** Index of the target spread position */
   slot: number;
   from: FanOrigin;
-  /** 目標位置（viewport 座標） */
+  /** Target position (viewport coordinates) */
   to: { left: number; top: number; width: number };
 }
 
 /**
- * 從扇形飛到牌陣位置的牌（固定定位、蓋在畫面最上層）。
- * 以目標尺寸渲染，出發時用 scale 縮成扇形牌的大小，飛行途中略微上拋形成弧線。
+ * A card flying from the fan to its spread position (fixed, above everything else).
+ * Rendered at the target size and scaled down to the fan card's size at the start; it rises slightly mid-flight to make an arc.
  */
 export function FlyingCard({
   flight,

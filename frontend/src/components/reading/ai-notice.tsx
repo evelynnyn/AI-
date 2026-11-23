@@ -1,4 +1,4 @@
-/** 小字標示：解讀內容由 AI 產生 */
+/** Small print: the reading was written by AI (US-11) */
 export function AiNotice({ className = "" }: { className?: string }) {
   return (
     <p

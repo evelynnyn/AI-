@@ -45,11 +45,11 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* ===== 主題：酒紅＋香檳金 復古占卜屋（US-16） =====
- * 全站只有深色主題。shadcn/ui 的語意色（background、primary…）與占卜屋色票（abyss、champagne…）
- * 都指向同一組顏色；元件內不寫死色碼。
- * 對比度（WCAG）：cream/abyss 15.4、muted-foreground/surface 7.1、champagne/surface 7.3、cream/wine 9.2、cream/wine-bright 6.6
- * 注意：wine-bright 只當背景用，不可當文字色（對深底只有 2.0–2.3）。
+/* ===== Theme: wine + champagne gold fortune-teller's parlor (US-16) =====
+ * Dark theme only. shadcn/ui semantic colors (background, primary…) and the parlor palette
+ * (abyss, champagne…) point at the same values; components never hard-code colors.
+ * WCAG contrast: cream/abyss 15.4, muted-foreground/surface 7.1, champagne/surface 7.3, cream/wine 9.2, cream/wine-bright 6.6
+ * Note: wine-bright is a background only, never a text color (2.0–2.3 on dark backgrounds).
  */
 :root {
   --abyss: #1e0a10;
@@ -95,7 +95,7 @@
   --sidebar-ring: var(--champagne);
 }
 
-/* 占卜屋色票與動畫（bg-abyss、text-champagne、border-champagne-soft…） */
+/* Parlor palette and animations (bg-abyss, text-champagne, border-champagne-soft…) */
 @theme inline {
   --color-abyss: var(--abyss);
   --color-surface: var(--surface);
@@ -122,7 +122,7 @@
   }
 }
 
-/* 燭火微微晃動 */
+/* Candlelight flicker */
 @keyframes flicker {
   0%,
   100% {
@@ -139,14 +139,14 @@
   }
 }
 
-/* 標題：很淡的金色光暈 */
+/* Titles: a faint golden glow */
 @utility title-glow {
   text-shadow:
     0 0 18px rgb(201 169 110 / 0.22),
     0 1px 0 rgb(0 0 0 / 0.4);
 }
 
-/* 3D 翻牌 */
+/* 3D card flip */
 @utility preserve-3d {
   transform-style: preserve-3d;
 }
@@ -164,7 +164,7 @@
     color-scheme: dark;
     -webkit-tap-highlight-color: transparent;
   }
-  /* 近黑的深酒紅為底，中央透出淡淡的燭光暖暈，四周壓暗 */
+  /* Near-black wine base with a soft warm candle glow in the middle and darker edges */
   body {
     @apply text-foreground;
     background-color: var(--abyss);
@@ -188,7 +188,7 @@
   }
 }
 
-/* 減少動態偏好：關閉星星閃爍與燭火晃動 */
+/* Reduced motion: no star twinkle or candle flicker */
 @media (prefers-reduced-motion: reduce) {
   .animate-twinkle {
     animation: none;
@@ -197,4 +197,14 @@
   .animate-flicker {
     animation: none;
   }
+}
+
+/* Card fan: fade out the bottom and both sides so the arc ends softly.
+ * Masks only read alpha, so black here means "fully visible", not a theme color. */
+.fan-mask {
+  mask-image:
+    linear-gradient(to bottom, black 70%, transparent),
+    linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  mask-composite: intersect;
+  -webkit-mask-composite: source-in;
 }

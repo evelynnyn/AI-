@@ -13,23 +13,23 @@ export interface SlotCard {
 
 interface SpreadBoardProps {
   positions: SpreadPosition[];
-  /** 排成幾欄 */
+  /** Number of columns */
   columns?: number;
-  /** 每個位置的牌（尚未抽到為 null） */
+  /** Card at each position (null until drawn) */
   cards: (SlotCard | null)[];
-  /** 牌是否已飛抵位置 */
+  /** Whether each card has landed */
   placed: boolean[];
   flipped: boolean[];
-  /** 是否開放翻牌 */
+  /** Whether cards can be flipped */
   canFlip: boolean;
   onFlip: (slot: number) => void;
-  /** 牌系是否有正逆位（沒有就不顯示「正位／逆位」） */
+  /** Whether the deck uses reversals (hides 正位／逆位 when not) */
   deckHasReversed: boolean;
-  /** 讓父層取得每個位置的座標，作為飛行目標 */
+  /** Reports each position's coordinates to the parent as flight targets */
   slotRefs: RefObject<(HTMLDivElement | null)[]>;
 }
 
-/** 牌陣：依位置排列，未抽到的位置顯示虛線框 */
+/** The spread laid out by position; empty positions show a dashed outline (US-05) */
 export function SpreadBoard({
   positions,
   columns,
@@ -43,14 +43,14 @@ export function SpreadBoard({
 }: SpreadBoardProps) {
   const cols = columns ?? positions.length;
   const rows = Math.ceil(positions.length / cols);
-  // 單張牌大一點；一列三張依手機寬度縮放；多列時縮小，避免整個牌陣超出畫面
+  // One card is larger; a row of three scales with phone width; several rows shrink so the spread fits the screen
   const slotWidth =
     positions.length === 1
       ? "w-36 sm:w-44"
       : rows === 1
         ? "w-[27vw] max-w-40 sm:w-40"
         : "w-[19vw] max-w-24 sm:w-28";
-  // 與上面的寬度對應，讓插畫只下載需要的尺寸
+  // Matches the widths above so only the needed image size downloads
   const imageSizes =
     positions.length === 1
       ? "(max-width: 640px) 144px, 176px"
@@ -73,7 +73,7 @@ export function SpreadBoard({
               }}
               className={`relative aspect-[7/12] ${slotWidth}`}
             >
-              {/* 空位虛線框 */}
+              {/* Empty position outline */}
               <div className="absolute inset-0 flex items-center justify-center rounded-[8%/4.7%] border border-dashed border-champagne-soft bg-abyss/40">
                 <span className="font-display text-3xl text-champagne-soft">
                   {i + 1}

@@ -43,7 +43,7 @@ export function HistoryList({ store }: { store: ReadingStore | null }) {
   }, [store, load]);
 
   const remove = async (id: string) => {
-    if (!store || !window.confirm("確定要刪除這筆占卜紀錄嗎？")) return;
+    if (!store || !window.confirm("確認要刪除這筆占卜紀錄嗎？")) return;
     try {
       await store.remove(id);
       setReadings((list) => list?.filter((r) => r.id !== id) ?? null);

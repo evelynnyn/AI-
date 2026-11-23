@@ -1,6 +1,6 @@
 import { HELPLINES, telHref } from "@/lib/tarot/safety";
 
-/** AI 婉拒且使用者流露自傷跡象時顯示：關心的訊息＋可直接撥打的求助專線 */
+/** Shown when the AI declines and the user shows signs of self-harm: a caring message and helplines to call (SEC-01) */
 export function CrisisNotice({ message }: { message: string }) {
   return (
     <div
