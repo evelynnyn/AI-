@@ -4,7 +4,7 @@ import { lenormandDeck, tarotDeck } from "./decks";
 import { fisherYates, shuffleDeck } from "./shuffle";
 
 describe("shuffleDeck", () => {
-  it("US-04 AC1: the fan holds every card of the deck exactly once", () => {
+  it("US-04 AC1 / US-13 AC2: the fan holds every card of the deck exactly once", () => {
     const pile = shuffleDeck(tarotDeck.cards, true);
 
     expect(pile).toHaveLength(78);

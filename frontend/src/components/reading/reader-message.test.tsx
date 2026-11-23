@@ -43,7 +43,7 @@ describe("ReaderMessage", () => {
     expect(stream.mock.calls[0][1]).toEqual(REQUEST);
   });
 
-  it("US-12 AC1: keeps the text so far and offers 再試一次", async () => {
+  it("US-12 AC1 / US-15 AC2: keeps the text so far and offers 再試一次", async () => {
     const stream = vi
       .fn<Stream>()
       .mockImplementationOnce(async (_p, _b, onText) => {

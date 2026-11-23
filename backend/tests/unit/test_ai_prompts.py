@@ -66,6 +66,14 @@ def test_us09_ac3_follow_up_rules_forbid_redrawing_and_redirect_new_topics() -> 
     assert "不要條列" in system
 
 
+def test_us11_ac2_follow_up_answers_are_prose_and_may_ask_back_once() -> None:
+    system = ai_prompts.build_follow_up_system_prompt(readers()["magician"])
+
+    assert "不要條列" in system
+    assert "結尾可以問使用者一個問題" in system
+    assert "這次就不要再問" in system
+
+
 @pytest.mark.parametrize("reader", ["high-priestess", "magician", "fool"])
 def test_us11_ac1_rules_ask_for_spoken_style_and_emotion_first(reader: str) -> None:
     system = ai_prompts.build_system_prompt(readers()[reader])  # type: ignore[index]

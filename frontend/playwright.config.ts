@@ -6,6 +6,8 @@ export default defineConfig({
   testDir: "./e2e",
   forbidOnly: isCI,
   retries: isCI ? 1 : 0,
+  // Locally the dev server compiles each page on first visit, which slows the full flows down.
+  timeout: isCI ? 30_000 : 90_000,
   reporter: isCI ? [["github"], ["html", { open: "never" }]] : "list",
   use: { baseURL: "http://localhost:3000", trace: "on-first-retry" },
   projects: [

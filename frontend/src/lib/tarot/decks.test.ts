@@ -41,7 +41,7 @@ describe("tarot deck", () => {
     expect(tarotDeck.getFaceInfo(tarot("star")).label).toBe("XVII");
   });
 
-  it("US-08 AC8: three-card summary tells the past, present and future story", () => {
+  it("US-06 AC2 / US-08 AC8: three-card summary tells the past, present and future story", () => {
     const positions = SPREADS.three.positions;
     const items: ReadingItem<TarotCard>[] = [
       { card: tarot("fool"), orientation: "upright", position: positions[0] },

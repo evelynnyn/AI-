@@ -34,14 +34,15 @@ test("US-29 / US-13 / US-30: sign up, save a three-card reading to the account, 
     await page.getByLabel("電子郵件").fill(email);
     await page.getByLabel("密碼").fill("e2e-password-123");
     await page.getByRole("button", { name: "註冊" }).click();
-    await expect(page).toHaveURL(/\/readings/);
+    // The dev server compiles the page on first visit, so allow extra time.
+    await expect(page).toHaveURL(/\/readings/, { timeout: 30_000 });
   });
 
   await test.step("US-13 AC7: an empty history shows the empty state", async () => {
     await expect(page.getByText("還沒有占卜紀錄")).toBeVisible();
   });
 
-  await test.step("US-13 AC1: a three-card reading is drawn and saved", async () => {
+  await test.step("US-13 AC1 / AC2 / US-05 AC1: three cards are drawn, flipped with 全部翻開 and saved", async () => {
     await page.goto("/reading/three");
     await page.getByLabel("你想問什麼？").fill(question);
     await drawCards(page, 3);

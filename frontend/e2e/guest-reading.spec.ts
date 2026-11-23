@@ -13,7 +13,7 @@ test("guest: daily card, AI reading, follow-up, then history", async ({
     "set E2E_SUPABASE=1 with the backend running (LLM_PROVIDER=mock)",
   );
 
-  await test.step("US-01 AC1: the home page lists the spreads by deck", async () => {
+  await test.step("US-01 AC1 / AC2: the home page lists the spreads by deck and opens one", async () => {
     await page.goto("/");
     await expect(page.getByRole("heading", { name: /塔羅牌/ })).toBeVisible();
     await expect(page.getByRole("heading", { name: /雷諾曼/ })).toBeVisible();
@@ -27,7 +27,7 @@ test("guest: daily card, AI reading, follow-up, then history", async ({
     await page.getByRole("radio", { name: /魔術師/ }).click();
   });
 
-  await test.step("US-03 / US-04 / US-05: shuffle, pick from the fan and flip", async () => {
+  await test.step("US-03 AC2 / US-04 AC2 / US-05 AC1 / AC3: shuffle, pick from the fan and flip", async () => {
     await drawCards(page, 1);
   });
 
