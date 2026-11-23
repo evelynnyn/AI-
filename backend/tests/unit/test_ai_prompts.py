@@ -66,6 +66,20 @@ def test_us09_ac3_follow_up_rules_forbid_redrawing_and_redirect_new_topics() -> 
     assert "不要條列" in system
 
 
+def test_us11_ac2_follow_up_answers_are_prose_and_may_ask_back() -> None:
+    system = ai_prompts.build_follow_up_system_prompt(readers()["magician"])
+
+    assert "不要條列" in system
+    assert "結尾可以問使用者一個問題" in system
+
+
+def test_us11_ac5_no_question_back_twice_in_a_row() -> None:
+    system = ai_prompts.build_follow_up_system_prompt(readers()["magician"])
+
+    assert "如果你上一次回答已經用問題結尾，這次就不要再問" in system
+    assert "不要列出問題清單" in system
+
+
 @pytest.mark.parametrize("reader", ["high-priestess", "magician", "fool"])
 def test_us11_ac1_rules_ask_for_spoken_style_and_emotion_first(reader: str) -> None:
     system = ai_prompts.build_system_prompt(readers()[reader])  # type: ignore[index]
@@ -80,10 +94,26 @@ def test_sec01_ac3_rules_list_every_helpline() -> None:
         assert number in ai_prompts.COMMON_RULES
 
 
-def test_sec02_ac1_rules_forbid_absolute_predictions_and_refer_professionals() -> None:
+def test_sec02_ac1_rules_forbid_absolute_predictions() -> None:
     assert "不做絕對的預言、不保證結果" in ai_prompts.COMMON_RULES
-    assert "說明它的轉化意義與出口" in ai_prompts.COMMON_RULES
+    assert "可能的趨勢與仍可選擇的空間" in ai_prompts.COMMON_RULES
+
+
+def test_sec02_ac2_difficult_cards_are_read_as_change_not_doom() -> None:
+    assert "例如死神、高塔、寶劍十" in ai_prompts.COMMON_RULES
+    assert "說明它的轉化意義與出口，不要讓人感到恐懼" in ai_prompts.COMMON_RULES
+
+
+def test_sec02_ac3_health_law_and_money_questions_refer_professionals() -> None:
+    assert "健康、醫療、法律或投資理財" in ai_prompts.COMMON_RULES
     assert "建議諮詢醫師、律師、財務顧問等專業人士" in ai_prompts.COMMON_RULES
+
+
+def test_sec02_ac4_everyday_readings_end_with_concrete_advice() -> None:
+    rules = ai_prompts.COMMON_RULES
+    assert "建議要具體、貼近使用者的問題" in rules
+    for generic in ai_prompts.GENERIC_ADVICE:
+        assert generic in rules  # listed as advice to avoid
 
 
 def test_sec03_ac2_question_is_treated_as_topic_not_instruction() -> None:
