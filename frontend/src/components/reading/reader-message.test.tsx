@@ -103,7 +103,7 @@ describe("ReaderMessage", () => {
     expect(screen.queryByRole("button", { name: "再試一次" })).toBeNull();
   });
 
-  it("US-14 AC4: a saved reading is shown without calling the AI again", async () => {
+  it("US-14 AC4 / US-15 AC3: a saved reading is shown without calling the AI again", async () => {
     const stream = vi.fn<Stream>();
 
     render(
@@ -118,6 +118,9 @@ describe("ReaderMessage", () => {
 
     expect(screen.getByText("已保存的解讀")).toBeInTheDocument();
     await waitFor(() => expect(stream).not.toHaveBeenCalled());
+    expect(
+      screen.queryByRole("button", { name: "請魔術師為我解讀" }),
+    ).toBeNull();
   });
 
   it("US-15 AC1: a reading with no saved text can be requested again", async () => {

@@ -5,7 +5,7 @@ import { drawCards } from "./reading";
 // Each test and step names the acceptance criterion it checks (see the GitHub issues).
 // Needs the backend with LLM_PROVIDER=mock (see README); Supabase is not used by guests.
 
-test("guest: daily card, AI reading, follow-up, then history", async ({
+test("US-01 / US-02 / US-03 / US-04 / US-05 / US-06 / US-08 / US-09 / US-10 / US-13 / US-14: a guest reads the daily card, asks a follow-up and finds it in history", async ({
   page,
 }) => {
   test.skip(

@@ -95,7 +95,7 @@ def test_us07_ac3_unknown_reader_returns_422(provider: RecordingProvider) -> Non
 # US-08 綜合解讀
 
 
-def test_us08_ac1_reading_streams_text_then_done(provider: RecordingProvider) -> None:
+def test_us08_ac1_us12_ac4_reading_streams_text_then_done(provider: RecordingProvider) -> None:
     response = post("reading", THREE)
 
     assert response.status_code == 200
@@ -288,6 +288,15 @@ def test_sec01_ac2_self_harm_follow_up_stops_reply(provider: RecordingProvider) 
     assert provider.calls == []
 
 
+def test_sec01_ac5_everyday_question_is_read_normally(provider: RecordingProvider) -> None:
+    events = lines(
+        post("reading", {**THREE, "question": "最近工作好累，想放個假，該怎麼安排？"}).text
+    )
+
+    assert events == [{"t": "你好"}, {"t": "，我看到了"}, {"done": True}]
+    assert len(provider.calls) == 1
+
+
 # SEC-04 拒答不換模型
 
 
@@ -305,3 +314,10 @@ def test_sec04_ac1_refusal_shows_gentle_message_without_retry() -> None:
     ]
     assert len(refusing.calls) == 1
     app.dependency_overrides.clear()
+
+
+def test_sec04_ac3_normal_reply_calls_the_ai_exactly_once(provider: RecordingProvider) -> None:
+    events = lines(post("reading", THREE).text)
+
+    assert events[-1] == {"done": True}
+    assert len(provider.calls) == 1

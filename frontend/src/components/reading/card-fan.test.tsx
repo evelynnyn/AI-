@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { beforeAll, describe, expect, it, vi } from "vitest";
 
@@ -63,5 +63,39 @@ describe("CardFan", () => {
     await userEvent.click(screen.getByRole("button", { name: "抽第 10 張牌" }));
 
     expect(onPick).not.toHaveBeenCalled();
+  });
+
+  it("US-04 AC5: a card that was already drawn cannot be drawn again", () => {
+    const onPick = vi.fn();
+    render(
+      <CardFan
+        count={78}
+        picked={new Set([4])}
+        disabled={false}
+        onPick={onPick}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "抽第 5 張牌" }));
+    expect(onPick).not.toHaveBeenCalled();
+
+    fireEvent.click(screen.getByRole("button", { name: "抽第 6 張牌" }));
+    expect(onPick).toHaveBeenCalledWith(5, expect.any(Object));
+  });
+
+  it("US-18 AC3: the 78-card fan downloads no images; every back reuses one symbol", () => {
+    const { container } = render(
+      <CardFan
+        count={78}
+        picked={new Set()}
+        disabled={false}
+        onPick={vi.fn()}
+      />,
+    );
+
+    expect(container.querySelectorAll("img")).toHaveLength(0);
+    const uses = container.querySelectorAll("use");
+    expect(uses).toHaveLength(78);
+    uses.forEach((u) => expect(u).toHaveAttribute("href", "#card-back"));
   });
 });

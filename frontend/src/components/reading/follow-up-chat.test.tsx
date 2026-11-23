@@ -82,7 +82,7 @@ describe("FollowUpChat", () => {
     await waitFor(() => expect(suggest).not.toHaveBeenCalled());
   });
 
-  it("US-09 AC2: after 5 follow-ups the input is replaced by a closing note", () => {
+  it("US-09 AC2 / US-10 AC4: after 5 follow-ups the input and suggestions give way to a closing note", () => {
     const turns = Array.from({ length: 5 }, (_, i) => ({
       question: `問題${i}`,
       answer: `回答${i}`,
