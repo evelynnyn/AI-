@@ -70,9 +70,12 @@ jobs:
       # and nothing to clean up because it disappears with the runner.
       - uses: supabase/setup-cli@v1
         with:
-          version: latest
+          # Pinned: "latest" asks the GitHub API, which can hit its rate limit.
+          version: 3.2.0
       - name: Start local Supabase
-        run: supabase start
+        # Skip services the tests never use: fewer image pulls, and no mail server
+        # fighting over port 54324 when the CLI retries a slow start.
+        run: supabase start -x studio,edge-runtime,mailpit,imgproxy
       - name: Export Supabase URL and anon key
         run: |
           eval "$(supabase status -o env)"

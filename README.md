@@ -64,7 +64,7 @@ GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs on ev
 | --- | --- |
 | Backend lint, types, unit tests | `ruff`, `mypy`, `pytest -m "not integration"` |
 | Frontend lint, types, unit tests | `npm run lint`, `npm run typecheck`, `npm test` |
-| RLS integration and Playwright E2E | `supabase start` in the runner, `pytest -m integration`, then Playwright against the production build |
+| RLS integration and Playwright E2E | `supabase start` in the runner (Supabase CLI 3.2.0, without Studio or mail), `pytest -m integration`, then Playwright against the production build |
 
 The E2E job uses a throwaway Supabase inside the runner, so it needs no repository secrets and leaves no test data behind.
 To block merging on failures, mark these three checks as required under Settings > Rules (or Branches) for `main`.
