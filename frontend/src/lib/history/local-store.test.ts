@@ -47,7 +47,7 @@ describe("localStore (guests)", () => {
     ]);
   });
 
-  it("US-30 AC1: deleting removes the reading", async () => {
+  it("US-30 AC6: deleting removes the guest's reading", async () => {
     const { id } = await localStore.create(DAILY);
 
     await localStore.remove(id);
