@@ -56,6 +56,16 @@ Google sign-in: enable the Google provider under Authentication > Providers and 
   then `E2E_SUPABASE=1 npx playwright test` in `frontend/`.
   Local test users stay in the local database; `npx supabase db reset` clears them.
 
+## Claude Code skills
+
+Project skills live in [.claude/skills/](.claude/skills/); Claude Code loads them automatically (or type `/<name>`).
+
+| Skill | Use it to |
+| --- | --- |
+| `ac-tests` | Write a story's Given-When-Then ACs in its issue and add one test per AC, named with the AC id |
+| `pr-review` | Review a PR against the four gates (ACs, test alignment, real CI runs, decision) and ARCHITECTURE.md |
+| `local-checks` | Run everything CI runs locally: lint, types, unit, RLS integration and E2E with local Supabase |
+
 ## CI
 
 GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs on every pull request and push to `main`:
