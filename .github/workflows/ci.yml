@@ -31,7 +31,7 @@ jobs:
       - run: ruff format --check .
       - run: mypy app
       # Integration tests skip themselves here; they run in the e2e job against local Supabase.
-      - run: pytest -m "not integration"
+      - run: pytest tests/unit
 
   frontend:
     name: Frontend lint, types, unit tests

@@ -62,7 +62,7 @@ GitHub Actions ([.github/workflows/ci.yml](.github/workflows/ci.yml)) runs on ev
 
 | Job | What it runs |
 | --- | --- |
-| Backend lint, types, unit tests | `ruff`, `mypy`, `pytest -m "not integration"` |
+| Backend lint, types, unit tests | `ruff`, `mypy`, `pytest tests/unit` |
 | Frontend lint, types, unit tests | `npm run lint`, `npm run typecheck`, `npm test` |
 | RLS integration and Playwright E2E | `supabase start` in the runner (Supabase CLI 3.2.0, without Studio or mail), `pytest -m integration`, then Playwright against the production build |
 
